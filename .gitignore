@@ -1,0 +1,10 @@
+# Documentos de trabajo (no necesarios en la web)
+*.pdf
+*.docx
+*.doc
+propuesta_ocr.txt
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
