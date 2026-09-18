@@ -519,14 +519,20 @@ dialog.consult-dialog::backdrop{background:rgba(0,0,0,.45)}
   border:none;
   border-radius:22px;
   padding:0;
-  /* centrado: el dialog usa margin:auto del UA; no ponemos display:flex aquí */
   width:min(660px,94vw);
   max-height:84vh;
   overflow:hidden;
   box-shadow:0 40px 100px rgba(10,18,40,.35),0 0 0 1px rgba(0,0,0,.07);
   animation:modalIn .2s cubic-bezier(.22,.68,0,1.15) both
 }
-dialog.art-modal[open]{display:block} /* asegura centrado nativo del navegador */
+/* Centrado explícito — funciona en Chrome, Firefox, Safari y móvil */
+dialog.art-modal[open]{
+  display:block;
+  position:fixed;
+  inset:0;
+  margin:auto;
+  height:fit-content;
+}
 @keyframes modalIn{from{opacity:0;transform:scale(.93) translateY(16px)}to{opacity:1;transform:none}}
 .art-modal::backdrop{background:rgba(10,18,40,.6);backdrop-filter:blur(6px);animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -675,13 +681,13 @@ dialog.art-modal[open]{display:block} /* asegura centrado nativo del navegador *
 
 /* ── Modal: hoja desde abajo en móvil ── */
 @media(max-width:640px){
-  .art-modal{
-    width:100%;max-height:91dvh;
-    border-radius:18px 18px 0 0;
-    /* forzar posición bottom en móvil sobrescribiendo el margin:auto del dialog */
-    position:fixed!important;bottom:0!important;left:0!important;top:auto!important;
+  dialog.art-modal[open]{
+    inset:auto 0 0 0!important;
     margin:0!important;
-    animation:slideUp .22s cubic-bezier(.22,.68,0,1.1) both
+    width:100%!important;
+    max-height:91dvh!important;
+    border-radius:18px 18px 0 0!important;
+    animation:slideUp .22s cubic-bezier(.22,.68,0,1.1) both!important
   }
   .art-modal-inner{max-height:91dvh}
   @keyframes slideUp{from{transform:translateY(60px);opacity:.4}to{transform:translateY(0);opacity:1}}
