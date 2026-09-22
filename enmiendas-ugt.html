@@ -1,0 +1,736 @@
+<title>Enmiendas UGT · Tabla Articulado UMA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+
+<style>
+:root {
+  --bg:         #F5F2EC;
+  --bg-page:    #FDFCF9;
+  --ink:        #181410;
+  --ink-2:      #3C3730;
+  --muted:      #7A7268;
+  --border:     #D5CFC3;
+  --border-lt:  #E8E2D8;
+  --uma-blue:   #1B4A8A;
+  --uma-blue-lt:#EEF3FB;
+  --red:        #C01228;
+  --red-bg:     #FDF3F4;
+  --red-border: #E8BAC0;
+  --red-dark:   #8A0D1C;
+  --navy:       #0E1B35;
+  --chip-roja:  #C01228;
+  --chip-prio:  #934000;
+  --chip-prio-bg:#FFF0E0;
+  --chip-nueva: #175C28;
+  --chip-nueva-bg:#E4F5EA;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0F1118;
+    --bg-page:   #13171F;
+    --ink:       #E8E2D8;
+    --ink-2:     #B8B0A0;
+    --muted:     #787068;
+    --border:    #252D3A;
+    --border-lt: #1E2530;
+    --uma-blue:  #7AAEE8;
+    --uma-blue-lt:#0D1828;
+    --red:       #E84060;
+    --red-bg:    #1C080C;
+    --red-border:#4A1820;
+    --red-dark:  #F07090;
+    --navy:      #C8D8F0;
+    --chip-roja:  #E84060;
+    --chip-prio:  #E8A060;
+    --chip-prio-bg:#2A1A08;
+    --chip-nueva: #50C870;
+    --chip-nueva-bg:#081A10;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0F1118;
+  --bg-page:   #13171F;
+  --ink:       #E8E2D8;
+  --ink-2:     #B8B0A0;
+  --muted:     #787068;
+  --border:    #252D3A;
+  --border-lt: #1E2530;
+  --uma-blue:  #7AAEE8;
+  --uma-blue-lt:#0D1828;
+  --red:       #E84060;
+  --red-bg:    #1C080C;
+  --red-border:#4A1820;
+  --red-dark:  #F07090;
+  --navy:      #C8D8F0;
+  --chip-roja:  #E84060;
+  --chip-prio:  #E8A060;
+  --chip-prio-bg:#2A1A08;
+  --chip-nueva: #50C870;
+  --chip-nueva-bg:#081A10;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
+
+/* ── Header ── */
+.header {
+  padding: 44px 0 32px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 36px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.ugt-pill {
+  flex-shrink: 0;
+  background: var(--red);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  padding: 5px 12px 4px;
+  border-radius: 2px;
+  margin-top: 6px;
+}
+.header-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  text-wrap: balance;
+}
+.header-meta {
+  margin-top: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: .05em;
+  display: flex;
+  gap: 0 20px;
+  flex-wrap: wrap;
+}
+.header-meta span::before { content: '— '; }
+
+/* ── Note ── */
+.note {
+  background: var(--uma-blue-lt);
+  border-left: 3px solid var(--uma-blue);
+  padding: 11px 16px;
+  font-size: 13px;
+  color: var(--ink-2);
+  font-style: italic;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Section heading ── */
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin: 36px 0 0;
+}
+
+/* ── Table ── */
+.articulado {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+
+/* Column-head row */
+.articulado thead tr {
+  background: var(--uma-blue);
+}
+.articulado thead th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+.articulado thead th:first-child { width: 42%; }
+
+/* Regular data rows */
+.articulado tbody tr.art-row {
+  border-top: 1px solid var(--border-lt);
+}
+.articulado tbody tr.art-row:hover td { background: var(--uma-blue-lt); }
+
+.articulado td {
+  padding: 10px 16px;
+  vertical-align: top;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  background: var(--bg-page);
+}
+.articulado td:first-child {
+  color: var(--muted);
+  font-style: italic;
+  border-right: 1px solid var(--border-lt);
+}
+.articulado td.empty {
+  color: var(--border);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: .1em;
+}
+.articulado td .sub { display: block; font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+/* Chips inside table cells */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.chip-roja   { background: var(--chip-roja); color: #fff; }
+.chip-prio   { background: var(--chip-prio-bg); color: var(--chip-prio); }
+.chip-nueva  { background: var(--chip-nueva-bg); color: var(--chip-nueva); }
+.chip-enmien { background: var(--border); color: var(--ink-2); }
+
+/* UGT amendment rows — full width, red */
+.articulado tr.ugt-row td {
+  background: var(--red-bg);
+  border-top: none;
+  padding: 0;
+}
+.ugt-inner {
+  border-left: 3px solid var(--red);
+  padding: 12px 16px 14px 14px;
+}
+.ugt-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ugt-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--red-border);
+}
+.ugt-body {
+  font-size: 13.5px;
+  color: var(--red);
+  line-height: 1.68;
+}
+.ugt-body p { margin-bottom: .55em; }
+.ugt-body p:last-child { margin-bottom: 0; }
+.ugt-body strong { font-weight: 600; color: var(--red-dark); }
+.ugt-body em { font-style: italic; }
+.ugt-justif {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed var(--red-border);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--red-dark);
+  opacity: .8;
+  line-height: 1.6;
+}
+.ugt-justif::before {
+  content: 'Justificación — ';
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: inline;
+}
+
+/* Separator between last ugt-row and next art-row */
+.articulado tr.ugt-row + tr.art-row td { border-top: 2px solid var(--border); }
+
+/* Footer */
+.doc-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.doc-footer .mark { color: var(--red); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .header { flex-direction: column; gap: 10px; }
+  .articulado thead th:first-child { width: 50%; }
+  .articulado td { padding: 8px 10px; font-size: 12.5px; }
+  .ugt-inner { padding: 10px 10px 12px 10px; }
+}
+@media print {
+  body { background: #fff; color: #000; }
+  .ugt-body { color: #900 !important; }
+  .articulado tbody tr.art-row:hover td { background: transparent; }
+}
+</style>
+
+<div class="page">
+
+<header class="header">
+  <div class="ugt-pill">UGT</div>
+  <div class="header-text">
+    <h1>Tabla Articulado — Instrucción Interna PTGAS 2026<br>con Propuestas de Enmienda UGT</h1>
+    <div class="header-meta">
+      <span>Universidad de Málaga</span>
+      <span>Mesa Sectorial de Negociación PTGAS</span>
+      <span>Septiembre 2026</span>
+    </div>
+  </div>
+</header>
+
+<p class="note">
+  Documento de trabajo basado en la Tabla Articulado de la Delegación del Rector en Materia de Personal (24/07/2026). Columna izquierda: instrucción vigente (MSN). Columna derecha: propuesta 2026 del Rectorado. Las filas resaltadas en rojo incluyen la posición de UGT. Las filas sin propuesta UGT se muestran sin añadidos.
+</p>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="section-title">Tabla articulado — correspondencia entre instrucciones</div>
+
+<table class="articulado">
+  <thead>
+    <tr>
+      <th>Instrucción vigente (MSN)</th>
+      <th>Propuesta Rectorado 2026</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Art. 1 -->
+    <tr class="art-row">
+      <td>Artículo 1. Ámbito objetivo.</td>
+      <td>Artículo 1. Objeto.</td>
+    </tr>
+
+    <!-- Art. 2 -->
+    <tr class="art-row">
+      <td>Artículo 2. Ámbito subjetivo.</td>
+      <td>Artículo 2. Ámbito subjetivo de aplicación.</td>
+    </tr>
+
+    <!-- Art. 3 → Art. 18 CALENDARIO LABORAL — enmienda UGT -->
+    <tr class="art-row">
+      <td>Artículo 3. Calendario laboral.</td>
+      <td>
+        Artículo 18. Calendario laboral.
+        <span class="chip chip-prio">Prioritario</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 18</div>
+          <div class="ugt-body">
+            <p><strong>Enmienda al apartado 1:</strong> El número de días de cierre por eficiencia energética, los períodos en que se apliquen y los servicios esenciales que queden exceptuados <strong>deberán ser objeto de negociación con la Mesa Sectorial antes de su propuesta al Consejo de Gobierno</strong>, no de mera consulta posterior.</p>
+            <p><strong>Nuevo apartado 3 (añadir):</strong> Los días de cierre por criterios de eficiencia energética no podrán superar en ningún caso el número de días de asuntos particulares reconocidos al personal. Cualquier exceso requerirá acuerdo expreso en Mesa Sectorial.</p>
+            <div class="ugt-justif">Los cierres energéticos han absorbido en la práctica la totalidad de los días de libre disposición del personal. UGT exige negociación real previa y un techo máximo de días que no pueda superarse sin acuerdo sindical.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 4 -->
+    <tr class="art-row">
+      <td>Artículo 4. Jornada de trabajo ordinaria.</td>
+      <td>Artículo 5. Jornada ordinaria de trabajo.</td>
+    </tr>
+
+    <!-- Art. 5 → Arts. 6/7/8 — enmienda UGT -->
+    <tr class="art-row">
+      <td>Artículo 5. Horario normal de trabajo.</td>
+      <td>
+        Artículo 6. Horario ordinario.<br>
+        Artículo 7. Presencia obligatoria.<br>
+        Artículo 8. Horario flexible.
+        <span class="chip chip-prio">Prioritario</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 6.1.c y Art. 8.5</div>
+          <div class="ugt-body">
+            <p><strong>Art. 6.1.c — Jornada partida (nueva redacción):</strong> de 9:00 a 14:00, y de <strong>15:30 a 17:30</strong>. El tramo de tarde solo podrá modificarse por <strong>acuerdo expreso entre la persona trabajadora y la persona responsable del servicio</strong>, con conocimiento del órgano competente en materia de PTGAS y de los órganos de representación del personal. En ningún caso podrá imponerse unilateralmente.</p>
+            <p><strong>Art. 8.5 — Saldo positivo (nueva redacción):</strong> El saldo positivo existente a 31 de diciembre podrá ser compensado durante el primer trimestre del año siguiente <strong>a solicitud de la persona interesada, sin necesidad de autorización previa</strong>. La denegación deberá ser motivada por escrito en el plazo de diez días hábiles.</p>
+            <div class="ugt-justif">El Art. 6.1.c actual permite al Centro modificar el bloque de tarde sin participación del trabajador. El Art. 8.5 actual exige "autorización excepcional" para compensar tiempo ya trabajado, creando inseguridad jurídica.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 6 -->
+    <tr class="art-row">
+      <td>Artículo 6. Horario especial (HE).</td>
+      <td>Artículo 12. Horario especial.</td>
+    </tr>
+
+    <!-- Art. 7 -->
+    <tr class="art-row">
+      <td>Artículo 7. Disponibilidad horaria (DH).</td>
+      <td>Artículo 14. Horas de disponibilidad y exceso de jornada.</td>
+    </tr>
+
+    <!-- Art. 8 → Art. 10 VERANO — LÍNEA ROJA -->
+    <tr class="art-row">
+      <td>Artículo 8. Horario reducido.</td>
+      <td>
+        Artículo 10. Horario reducido.
+        <span class="chip chip-roja">🔴 Línea roja</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 10 · Línea roja</div>
+          <div class="ugt-body">
+            <p><strong>Apartado 1 (nueva redacción):</strong> Para favorecer la conciliación, durante el periodo comprendido entre el <strong>1 de julio y el 30 de septiembre</strong>, el horario diario quedará establecido, con carácter general, en cinco horas diarias. <em>(La propuesta del Rectorado solo garantiza julio–agosto.)</em></p>
+            <p><strong>Nuevo apartado 7 (añadir):</strong> Cuando mediante Resolución Rectoral se reduzca el período fijado en el apartado primero, el Rector deberá <strong>motivarlo expresamente por escrito</strong> y remitir la motivación a la Mesa Sectorial con al menos 30 días naturales de antelación.</p>
+            <div class="ugt-justif">La práctica consolidada desde 2020 incluyó septiembre como mes de horario reducido. La propuesta del Rectorado regresa a dos meses y deja cualquier ampliación a discrecionalidad rectoral anual. UGT exige blindar los tres meses en el articulado y que toda reducción sea motivada y negociada.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 9 -->
+    <tr class="art-row">
+      <td>Artículo 9. Horario de atención al público.</td>
+      <td>Artículo 11. Horario de atención a las personas usuarias.</td>
+    </tr>
+
+    <!-- Art. 10 -->
+    <tr class="art-row">
+      <td>Artículo 10. Períodos de descanso.</td>
+      <td>Artículo 19. Apertura oficial del curso académico. Santo Tomás de Aquino. Patrón del centro.</td>
+    </tr>
+
+    <!-- Art. 11 -->
+    <tr class="art-row">
+      <td>Artículo 11. Ausencias por enfermedad.</td>
+      <td>Artículo 31. Ausencias por enfermedad.</td>
+    </tr>
+
+    <!-- Art. 12 -->
+    <tr class="art-row">
+      <td>Artículo 12. Ausencias por causa de fuerza mayor.</td>
+      <td>Artículo 32. Ausencias por causa de fuerza mayor.</td>
+    </tr>
+
+    <!-- Art. 13 → Art. 13 CONTROL HORARIO — LÍNEA ROJA -->
+    <tr class="art-row">
+      <td>Artículo 13. Control horario.</td>
+      <td>
+        Artículo 13. Control horario.
+        <span class="chip chip-roja">🔴 Línea roja</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 13.5 · Línea roja</div>
+          <div class="ugt-body">
+            <p><strong>Apartado 5 (nueva redacción):</strong> El <strong>incumplimiento reiterado y no justificado</strong> de la obligación de registro horario podrá dar lugar a responsabilidades disciplinarias, previa apertura del correspondiente procedimiento. Los errores puntuales o las omisiones causadas por <strong>fallos técnicos del sistema implantado por la Universidad no podrán ser objeto de expediente disciplinario</strong> y se subsanarán mediante declaración responsable. En ningún caso se aplicarán deducciones de haberes automáticas sin que conste previamente la realidad de la ausencia.</p>
+            <div class="ugt-justif">La redacción actual permite expedientar cualquier olvido de fichar, incluyendo averías del lector. El sistema de fichaje es un instrumento de la Universidad; sus fallos no pueden trasladarse al trabajador como responsabilidad disciplinaria.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 14 → Art. 28 PERMISOS — enmienda UGT -->
+    <tr class="art-row">
+      <td>Artículo 14. Permisos y licencias.</td>
+      <td>
+        Artículo 28. Permisos y licencias ordinarios.
+        <span class="chip chip-prio">Prioritario</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 28 §5 (Permiso parental)</div>
+          <div class="ugt-body">
+            <p><strong>Apartado 5 — única modificación: sustituir «no retribuido» por «retribuido».</strong></p>
+            <p>Las personas trabajadoras tendrán derecho a un permiso parental <strong>retribuido</strong>, para el cuidado de hijo, hija o menor acogido por tiempo superior a un año, hasta el momento en que el menor cumpla ocho años. [Resto del artículo sin modificación.]</p>
+            <div class="ugt-justif">La Directiva (UE) 2019/1158 exige remuneración adecuada durante el permiso parental (art. 8). El carácter no retribuido lo hace inejercible para familias con menores ingresos y discrimina indirectamente a las mujeres. La UMA tiene competencia para mejorar el mínimo legal.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 15 → Art. 30 LICENCIA NO RETRIBUIDA — enmienda UGT -->
+    <tr class="art-row">
+      <td>Artículo 15. Licencia no retribuida.</td>
+      <td>
+        Artículo 30. Licencia no retribuida.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 30</div>
+          <div class="ugt-body">
+            <p><strong>Nueva redacción:</strong> El PTGAS que lleve como mínimo un año al servicio de la Universidad tendrá derecho, si las necesidades del servicio lo permiten, a una licencia no retribuida con una duración mínima de 7 días naturales y máxima de <strong>seis meses</strong>, no pudiendo solicitarla más de una vez <strong>al año</strong>. La denegación deberá ser motivada por escrito. El silencio de la Administración transcurridos 30 días tendrá carácter <strong>estimatorio</strong> cuando la solicitud se presente con al menos 45 días de antelación.</p>
+            <div class="ugt-justif">El límite de tres meses no cubre necesidades vitales razonables. La restricción de "una vez cada dos años agotando el máximo" impide licencias cortas sucesivas. El silencio debe ser estimatorio para que el derecho sea efectivo.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Art. 16 -->
+    <tr class="art-row">
+      <td>Artículo 16. Concesión de permisos y licencias.</td>
+      <td>Artículo 27. Régimen general de permisos y licencias.</td>
+    </tr>
+
+    <!-- Art. 17 -->
+    <tr class="art-row">
+      <td>Artículo 17. Permisos para la conciliación.</td>
+      <td>Artículo 29. Permisos para la conciliación y protección social.</td>
+    </tr>
+
+    <!-- Art. 18 -->
+    <tr class="art-row">
+      <td>Artículo 18. Reducción de jornada por guarda legal.</td>
+      <td>Artículo 22. Reducción de jornada por guarda legal.</td>
+    </tr>
+
+    <!-- Art. 19 -->
+    <tr class="art-row">
+      <td>Artículo 19. Bolsa de horas para la conciliación.</td>
+      <td>Artículo 23. Bolsa de horas para la conciliación.</td>
+    </tr>
+
+    <!-- Art. 20 -->
+    <tr class="art-row">
+      <td>Artículo 20. Reducción de jornada por razón de edad.</td>
+      <td>Artículo 24. Reducción de la jornada por razón de edad y discapacidad.</td>
+    </tr>
+
+    <!-- Art. 21 -->
+    <tr class="art-row">
+      <td>Artículo 21. Reducción de jornada por discapacidad.</td>
+      <td>Artículo 24. Reducción de la jornada por razón de edad y discapacidad.</td>
+    </tr>
+
+    <!-- Art. 22 -->
+    <tr class="art-row">
+      <td>Artículo 22. Vacaciones anuales.</td>
+      <td>Artículo 20. Vacaciones anuales.</td>
+    </tr>
+
+    <!-- Art. 23 -->
+    <tr class="art-row">
+      <td>Artículo 23. Horas de disponibilidad.</td>
+      <td>Artículo 14. Horas de disponibilidad y exceso de jornada.</td>
+    </tr>
+
+    <!-- Art. 24 -->
+    <tr class="art-row">
+      <td>Artículo 24. Horas extraordinarias de carácter urgente.</td>
+      <td>Artículo 16. Horas extraordinarias de carácter urgente.</td>
+    </tr>
+
+    <!-- Art. 25 -->
+    <tr class="art-row">
+      <td>Artículo 25. Exceso sobre la jornada ordinaria.</td>
+      <td>Artículo 14. Horas de disponibilidad y exceso de jornada.</td>
+    </tr>
+
+    <!-- Art. 26 -->
+    <tr class="art-row">
+      <td>Artículo 26. Prestación de servicios en sábado, domingo o festivos.</td>
+      <td>Artículo 17. Prestación de servicios en sábados, domingos y festivos.</td>
+    </tr>
+
+    <!-- Art. 27 -->
+    <tr class="art-row">
+      <td>Artículo 27. Trabajos de asistencia y apoyo que conlleven una jornada superior a la ordinaria.</td>
+      <td>Artículo 15. Trabajos de asistencia y apoyo que conlleven una jornada superior a la ordinaria.</td>
+    </tr>
+
+    <!-- DA 1 -->
+    <tr class="art-row">
+      <td>DA 1. Definiciones de situaciones y contingencias.</td>
+      <td>Disposición adicional primera. Definiciones de situaciones y contingencias.</td>
+    </tr>
+
+    <!-- DA 2 -->
+    <tr class="art-row">
+      <td>DA 2. Acreditaciones.</td>
+      <td>Disposición adicional segunda. Acreditaciones.</td>
+    </tr>
+
+    <!-- DA 3 — suprimida en propuesta -->
+    <tr class="art-row">
+      <td>DA 3. Festividades laborales que coincidan en sábado.</td>
+      <td class="empty">— suprimida en propuesta 2026 —</td>
+    </tr>
+
+    <!-- DA 4 -->
+    <tr class="art-row">
+      <td>DA 4.</td>
+      <td>Disposición adicional tercera.</td>
+    </tr>
+
+    <!-- DA 5 -->
+    <tr class="art-row">
+      <td>DA 5.</td>
+      <td>Disposición adicional cuarta.</td>
+    </tr>
+
+    <!-- DT CIVI — suprimida → enmienda UGT -->
+    <tr class="art-row">
+      <td>DT. Comisión de interpretación y vigilancia.</td>
+      <td class="empty">
+        — <strong style="color:var(--red)">no incluida en propuesta 2026</strong> —
+        <span class="chip chip-nueva">Nueva disposición UGT</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Disposición Adicional Quinta (nueva) · CIVI</div>
+          <div class="ugt-body">
+            <p>UGT propone añadir una <strong>Disposición Adicional Quinta</strong> que regule formalmente la Comisión de Interpretación y Vigilancia de la Instrucción (CIVI), órgano mencionado en el preámbulo de la propuesta pero no articulado en ningún precepto.</p>
+            <p><strong>Composición paritaria:</strong> 4 representantes de la Universidad + 4 representantes sindicales en proporción electoral. <strong>Periodicidad:</strong> reunión ordinaria trimestral + extraordinaria a petición de cualquier miembro. <strong>Efecto vinculante:</strong> sus resoluciones interpretativas son de obligado cumplimiento para todos los Centros, Servicios y Unidades.</p>
+            <div class="ugt-justif">Una comisión anunciada en el preámbulo sin composición, competencias ni procedimiento no ofrece garantías reales. La DT de la instrucción vigente ya la preveía; la propuesta 2026 la elimina. UGT exige que figure en el articulado con participación sindical garantizada.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- DD -->
+    <tr class="art-row">
+      <td>DD.</td>
+      <td>Disposición derogatoria.</td>
+    </tr>
+
+    <!-- DF -->
+    <tr class="art-row">
+      <td>DF.</td>
+      <td>Disposición final.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="section-title" style="margin-top:48px">Tabla articulado nuevo — preceptos sin equivalente en la instrucción vigente</div>
+
+<table class="articulado" style="margin-top:0">
+  <thead>
+    <tr>
+      <th>Instrucción vigente (MSN)</th>
+      <th>Propuesta Rectorado 2026 — artículo nuevo</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- New: Art. 3 -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Artículo 3. Principios de aplicación.</td>
+    </tr>
+
+    <!-- New: Art. 4 -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Artículo 4. Competencia y responsabilidad en la aplicación de la Instrucción.</td>
+    </tr>
+
+    <!-- New: Art. 9 TELETRABAJO — enmienda UGT -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>
+        Artículo 9. Prestación de servicios en régimen de teletrabajo.
+        <span class="chip chip-prio">Prioritario</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 9 (nuevo)</div>
+          <div class="ugt-body">
+            <p><strong>Nuevo apartado 4 (añadir):</strong> El personal con derecho reconocido a teletrabajo podrá ejercerlo con un <strong>mínimo garantizado de dos días semanales</strong> en modalidad no presencial. La denegación o suspensión del teletrabajo deberá ser <strong>motivada y comunicada con al menos cinco días hábiles de antelación</strong>, salvo urgencia acreditada. En ningún caso la negativa o retirada del teletrabajo podrá tener consecuencias disciplinarias ni evaluativas negativas.</p>
+            <div class="ugt-justif">El artículo del Rectorado reproduce el mínimo legal sin añadir garantías. UGT exige que los días reconocidos sean efectivos y que la revocación arbitraria quede expresamente prohibida como causa de sanción o calificación negativa.</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- New: Art. 21 -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Artículo 21. Régimen general de las reducciones de jornada.</td>
+    </tr>
+
+    <!-- New: Art. 25 -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Artículo 25. Reducción de jornada por recuperación de enfermedad o accidente.</td>
+    </tr>
+
+    <!-- New: Art. 26 -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Artículo 26. Régimen jurídico de los permisos y licencias.</td>
+    </tr>
+
+    <!-- New: Disp. Transitoria -->
+    <tr class="art-row">
+      <td class="empty">— sin equivalente —</td>
+      <td>Disposición transitoria.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<footer class="doc-footer">
+  <span class="mark">UGT · PTGAS-UMA</span>
+  <span>Mesa Sectorial de Negociación · Universidad de Málaga · Septiembre 2026</span>
+</footer>
+
+</div>
