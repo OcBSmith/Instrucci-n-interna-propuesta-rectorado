@@ -714,6 +714,8 @@ function filtrarArts(cat, btn) {
     if (da) return 'da_' + da[1].toLowerCase();
     if (/DT\s+Nueva/i.test(ref)) return 'dt_nueva';
     if (/Derogatoria/i.test(ref)) return 'derogatoria';
+    if (/Solo\s+Pre[aá]mbulo/i.test(ref)) return 'civi_preambulo';
+    if (/Suprimida/i.test(ref)) return 'da_festivos_sabado';
     return null;
   }
 
