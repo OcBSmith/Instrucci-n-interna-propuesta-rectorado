@@ -69,9 +69,9 @@
       <div class="filter-chips">
         <button type="button" class="filter-chip active" onclick="filtrarArts('all',this)">Todos <span class="filter-chip-count">39</span></button>
         <button type="button" class="filter-chip chip-green" onclick="filtrarArts('mejora',this)">🟢 Mejoras <span class="filter-chip-count">12</span></button>
-        <button type="button" class="filter-chip chip-red" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">7</span></button>
+        <button type="button" class="filter-chip chip-red" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">8</span></button>
         <button type="button" class="filter-chip chip-blue" onclick="filtrarArts('nuevo',this)">🔵 Nuevos <span class="filter-chip-count">8</span></button>
-        <button type="button" class="filter-chip chip-amber" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">12</span></button>
+        <button type="button" class="filter-chip chip-amber" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">11</span></button>
       </div>
     </div>
 
@@ -354,7 +354,7 @@
           <p>Se mantienen los <strong>22 días hábiles</strong> base con escala por antigüedad (hasta 26 días con 30+ años). Los 4 artículos de 2017 se unifican en uno, lo que da coherencia.</p>
           <p>Hay una mejora implícita: el Art. 20.6 aclara que si la IT (baja médica) impide disfrutar las vacaciones dentro del año, pueden disfrutarse en el año siguiente, <strong>siempre que no hayan transcurrido más de 18 meses</strong> desde el fin del año en que se generaron. Esto es más favorable que lo que se aplicaba en 2017 y resuelve muchos conflictos prácticos.</p>
         </div>
-        <div class="art-card-ugt">⚑ UGT considera que la consolidación de los 4 artículos en uno, con la garantía de los 18 meses tras IT, es un avance real que simplifica la gestión y protege al trabajador en situaciones de baja prolongada.</div>
+        <div class="art-card-ugt-ok">✓ UGT valora positivamente la consolidación de los 4 artículos en uno y la garantía de los 18 meses tras IT. Sin reivindicación específica: es un avance real que simplifica la gestión y protege al trabajador en situaciones de baja prolongada.</div>
       </div>
 
       <!-- ── CAPÍTULO IV: REDUCCIONES DE JORNADA ───────────────── -->
@@ -577,7 +577,8 @@
           <span class="pill pill-neutral">Garantía estable</span>
         </div>
         <div class="art-card-body">
-          <p>Cualquier normativa de rango superior (ley estatal, autonómica, EBEP) que sea <strong>más favorable</strong> al trabajador se incorpora automáticamente a la UMA sin necesidad de modificar la Instrucción. Garantía estable que actúa como "suelo de derechos" automático.</p>
+          <p>Cuando una normativa de rango superior (ley estatal, autonómica, EBEP) establezca condiciones <strong>más favorables</strong> para el PTGAS, podrá incorporarse a la Instrucción <strong>previa negociación</strong> con los representantes del personal. No opera de forma automática: requiere que UMA negocie con la representación sindical antes de incorporarla.</p>
+          <p>El derecho a que siempre se aplique la norma más favorable ya está garantizado en el Art. 26.5, con efecto directo e inmediato. Esta DA Tercera regula un mecanismo adicional de incorporación formal al texto de la Instrucción, no la aplicabilidad directa de las normas más ventajosas.</p>
         </div>
         <div class="art-card-ugt art-card-ugt-ok">✓ Sin reivindicación específica en esta DA — es una garantía de mínimos ya consolidada. UGT la invocará sistemáticamente cuando cualquier normativa estatal o autonómica sea más favorable que la Instrucción, sin necesidad de esperar a su revisión.</div>
       </div>
@@ -707,7 +708,7 @@ function filtrarArts(cat, btn) {
 
   function getArtKey(card) {
     var ref = (card.querySelector('.art-card-ref') || {}).textContent || '';
-    var m = ref.match(/→\s*Art\.\s*(\d+)/);
+    var m = ref.match(/→\s*Arts?\.\s*(\d+)/);
     if (m) return 'art' + m[1];
     var da = ref.match(/→\s*DA\s+(Primera|Segunda|Tercera|Cuarta)/i);
     if (da) return 'da_' + da[1].toLowerCase();
