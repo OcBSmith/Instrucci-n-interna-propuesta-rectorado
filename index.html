@@ -47,6 +47,7 @@
         <span class="doc-hero-status">Pendiente de negociación en Mesa Sectorial</span>
       </div>
       <div class="doc-hero-by">Análisis y posición de <strong>UGT · Sección Sindical UMA</strong></div>
+      <div class="doc-hero-update">Análisis actualizado: <strong>23/09/2026</strong> · Documento analizado: Propuesta del Rectorado de <strong>24/07/2026</strong> (34 págs.) · Verificado art. por art. frente al Texto Refundido de 2017</div>
     </div>
     <button class="print-btn print-btn-top" onclick="imprimirPDF()" title="Generar PDF del análisis completo">⬇ Descargar PDF</button>
   </div>
@@ -65,11 +66,11 @@
     </div>
     <div class="filter-chips-row" style="margin-bottom:20px">
       <div class="filter-chips">
-        <button type="button" class="filter-chip active" onclick="filtrarArts('all',this)">Todos <span class="filter-chip-count">39</span></button>
-        <button type="button" class="filter-chip chip-green" onclick="filtrarArts('mejora',this)">🟢 Mejoras <span class="filter-chip-count">11</span></button>
-        <button type="button" class="filter-chip chip-red" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">10</span></button>
-        <button type="button" class="filter-chip chip-blue" onclick="filtrarArts('nuevo',this)">🔵 Nuevos <span class="filter-chip-count">7</span></button>
-        <button type="button" class="filter-chip chip-amber" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">11</span></button>
+        <button type="button" class="filter-chip active" data-cat="all" onclick="filtrarArts('all',this)">Todos <span class="filter-chip-count">39</span></button>
+        <button type="button" class="filter-chip chip-green" data-cat="mejora" onclick="filtrarArts('mejora',this)">🟢 Mejoras <span class="filter-chip-count">11</span></button>
+        <button type="button" class="filter-chip chip-red" data-cat="alerta" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">10</span></button>
+        <button type="button" class="filter-chip chip-blue" data-cat="nuevo" onclick="filtrarArts('nuevo',this)">🔵 Nuevos <span class="filter-chip-count">7</span></button>
+        <button type="button" class="filter-chip chip-amber" data-cat="neutro" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">11</span></button>
       </div>
     </div>
 
@@ -664,7 +665,7 @@
 </main>
 
 <footer class="doc-footer">
-  <span class="footer-text">Elaborado por UGT · UMA · 02/09/2026 · Verificación completa de la propuesta (34 págs.) realizada el 02/09/2026<br>Fuentes: Texto Refundido 2017 + Propuesta Rectorado 24/07/2026 + Tabla articulado 24/07/2026</span>
+  <span class="footer-text">Elaborado por UGT · UMA · Verificación completa de la propuesta (34 págs.) el 02/09/2026 · Última revisión y auditoría de contenidos: 23/09/2026<br>Fuentes: Texto Refundido 2017 + Propuesta Rectorado 24/07/2026 + Tabla articulado 24/07/2026</span>
   <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
     <a href="mailto:anroca77@gmail.com" class="calc-btn" style="font-size:14px;padding:8px 18px;text-decoration:none">✉ Consultar a UGT</a>
     <button class="print-btn" onclick="imprimirPDF()">⬇ Descargar PDF</button>
@@ -703,6 +704,23 @@ function filtrarArts(cat, btn) {
   document.querySelectorAll('#articulos .filter-chip').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
+// Contadores dinámicos: se calculan a partir de las tarjetas reales al cargar,
+// para que nunca queden desincronizados si se añade, quita o reclasifica una ficha.
+(function() {
+  var cards = document.querySelectorAll('#artGrid .art-card');
+  var counts = { all: cards.length, mejora: 0, alerta: 0, nuevo: 0, neutro: 0 };
+  cards.forEach(function(c) {
+    var s = c.dataset.status;
+    if (counts[s] != null) counts[s]++;
+  });
+  document.querySelectorAll('#articulos .filter-chip').forEach(function(chip) {
+    var cat = chip.dataset.cat;
+    var span = chip.querySelector('.filter-chip-count');
+    if (cat && span && counts[cat] != null) span.textContent = counts[cat];
+  });
+  var sc = document.querySelector('#articulos .section-count');
+  if (sc) sc.textContent = counts.all + ' fichas';
+})();
 // Modal: texto literal del artículo
 (function() {
   var modal = document.getElementById('artModal');
