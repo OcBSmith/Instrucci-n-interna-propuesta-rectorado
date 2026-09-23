@@ -67,9 +67,9 @@
       <div class="filter-chips">
         <button type="button" class="filter-chip active" onclick="filtrarArts('all',this)">Todos <span class="filter-chip-count">39</span></button>
         <button type="button" class="filter-chip chip-green" onclick="filtrarArts('mejora',this)">🟢 Mejoras <span class="filter-chip-count">11</span></button>
-        <button type="button" class="filter-chip chip-red" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">9</span></button>
+        <button type="button" class="filter-chip chip-red" onclick="filtrarArts('alerta',this)">🔴 Alertas <span class="filter-chip-count">10</span></button>
         <button type="button" class="filter-chip chip-blue" onclick="filtrarArts('nuevo',this)">🔵 Nuevos <span class="filter-chip-count">7</span></button>
-        <button type="button" class="filter-chip chip-amber" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">12</span></button>
+        <button type="button" class="filter-chip chip-amber" onclick="filtrarArts('neutro',this)">⬜ Sin cambio <span class="filter-chip-count">11</span></button>
       </div>
     </div>
 
@@ -151,18 +151,19 @@
         <div class="art-card-ugt">Se insistirá en que la pausa de 30 min es un derecho individual, no una gracia del responsable de servicio, y no puede negarse alegando carga de trabajo.</div>
       </div>
 
-      <div class="art-card neutral" data-status="neutro">
+      <div class="art-card red" data-status="alerta">
         <div class="art-card-head">
           <span class="art-card-ref">Art. 5 → Arts. 6 y 7</span>
           <span class="art-card-icon">🕒</span>
           <span class="art-card-title">Horario ordinario y presencia obligatoria</span>
-          <span class="pill pill-neutral">Cambio en jornada partida</span>
+          <span class="pill pill-neutral">Mañana y tarde: sin cambio</span>
+          <span class="pill pill-warn">⚠ Recorte jornada partida</span>
         </div>
         <div class="art-card-body">
           <p>Turnos y presencia obligatoria de mañana y tarde <strong>se mantienen igual que en 2017</strong> (mañana 8-15h, presencia 9-14h; tarde 15-22h, presencia 16-21h). Verificado.</p>
-          <p><strong>Sí hay un cambio real en la jornada partida.</strong> En 2017 la tarde de la jornada partida era flexible: bastaba con "comenzar, al menos, a las 15:00". La propuesta la <strong>fija ahora en 16:00-18:00</strong> (Art. 6.1.c), modificable solo "excepcionalmente y por causas motivadas" con autorización de Gerencia. Es decir, se pasa de un margen amplio a un tramo cerrado que hay que pedir permiso para alterar. Afecta sobre todo a quien organizaba su tarde con más holgura.</p>
+          <p><strong>⚠ Pérdida real para la jornada partida (Art. 6.1.c).</strong> En 2017 la tarde era flexible: bastaba con "comenzar, al menos, a las 15:00". El trabajador podía fijar su tramo de tarde entre las 15:00 y las 18:00 según sus circunstancias (p.ej. 15:00–17:00). La propuesta <strong>cierra ese margen fijando el tramo en 16:00–18:00 sin posibilidad de variación individual</strong>. Modificarlo solo es posible "excepcionalmente y por causas motivadas" y, además, <strong>la petición no la puede hacer el propio trabajador</strong>: debe hacerla el Centro, Servicio o Unidad, con autorización de Gerencia. Es decir, se pierden tanto la hora de flexibilidad (15–16h) como el derecho individual a solicitarla. Afecta especialmente a quienes usaban ese tramo para conciliar (recogida de hijos, citas, etc.).</p>
         </div>
-        <div class="art-card-ugt">Se pedirá recuperar la flexibilidad de 2017 en la jornada partida (poder situar las dos horas de tarde dentro de una banda amplia), o al menos que la modificación del tramo 16-18h no dependa de autorización discrecional caso por caso.</div>
+        <div class="art-card-ugt">Se solicitará recuperar la flexibilidad de 2017 en la jornada partida: que el tramo de tarde pueda situarse dentro de una banda amplia (p.ej. 15:00–18:00) a elección del trabajador, sin necesidad de autorización caso por caso, y que en todo caso sea el propio trabajador quien pueda solicitarlo directamente a Gerencia.</div>
       </div>
 
       <div class="art-card red" data-status="alerta">
