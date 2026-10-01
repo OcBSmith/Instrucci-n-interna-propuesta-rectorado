@@ -3,6 +3,8 @@
 *.docx
 *.doc
 propuesta_ocr.txt
+normativa/*
+!normativa/FUENTES.md
 
 # Sistema
 .DS_Store

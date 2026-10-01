@@ -12,6 +12,7 @@ Herramienta de análisis comparativo: propuesta de Instrucción Interna 2026 del
 - `propuesta_ocr.txt` — OCR de la propuesta 2026 (34 pp, 1178 líneas) — fuente primaria
 - `20170206_TEXTO_REFUNDIDO_INSTRUCCION_INTERNA_antigua.pdf` — texto 2017 — fuente primaria
 - `enmiendas-ugt.html` — página separada con propuestas de enmienda
+- `normativa/` — LOCAL, no versionada (solo `FUENTES.md` con las URL para volver a descargarla). Normas oficiales descargadas (BOE/BOJA/UMA) en PDF + `.txt` extraído con `pdftotext` para buscar con grep: EBEP consolidado, Ley 5/2023 Función Pública Andalucía, Decreto 347/2003, fiestas Andalucía 2027, calendarios UMA (PTGAS 2025 y 2026, PDI 2026), IV Convenio PAS laboral universidades andaluzas (copia UPO), acuerdos de homologación (UCO anexo 2, UJA completo)
 - `docs/constitution.md` — principios innegociables del análisis
 - `MEMORY.md` — estado del proyecto entre sesiones
 
