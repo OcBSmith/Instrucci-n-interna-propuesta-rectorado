@@ -56,6 +56,13 @@ Errores de fondo corregidos: Art. 9 decía que no existía normativa de teletrab
 ## Cotejo modal (art_texts.js) con el OCR (2026-10-01)
 Comparación palabra a palabra de 40 entradas: arts. 1-32 y DA/DT coinciden (las diferencias son solo erratas del OCR corregidas: espacios, "12/22/32" → 1.º/2.º/3.º, "300" → "30 o"). Corregido: el Art. 5.2.c omitía una frase; "civi_preambulo" y "da_festivos_sabado" contenían redacción propia con afirmaciones no verificadas bajo la etiqueta "texto literal" → ahora cita literal del Preámbulo y nota neutra. Caché `art_texts.js?v=3`.
 
+## enmiendas-ugt.html revisada con correcciones del informe de evaluación (2026-10-01)
+- Aplicadas todas las correcciones posibles de `revision/evaluacion-enmiendas.md` (18 enmiendas evaluadas).
+- Nueva clase CSS `.ugt-pendiente` (color oscuro en light mode / ámbar en dark mode; pasa WCAG al heredar opacity:.8 del padre `.ugt-justif`).
+- 19 marcadores `[⚠ Decisión sindical: ...]` añadidos en las celdas de justificación afectadas.
+- Cambios de fondo: Art. 18 aptdo. 3 reescrito (sin referencia a «asuntos particulares»); Art. 9 teletrabajo reemplazado por redacción alternativa del evaluador (sin mínimo de días en la Instrucción); Art. 12 remisión ampliada a arts. 14–17; Art. 13.5 reestructurado en tres sub-aptdos (5, 5 bis, 5 ter); Art. 28.5 cambia de «suprimir» a «modificar el inciso»; Art. 28.15 justificación corregida (distinción entre texto del Rectorado y texto de 2017); Art. 30 añadida condición «siempre y cuando haya agotado el plazo máximo» y referencia al Art. 27.2; Art. 24.2 justificación corregida (argumento de silencio, no reconocimiento expreso); Art. 17.2.b redacción de letra c) añadida; DA festivos justificación corregida (no es la DA 3ª de 2017); DA CIVI «resoluciones de obligado cumplimiento» sustituido por «criterios de interpretación».
+- `npm run check`: ✔ Todo correcto (26/26 comprobaciones).
+
 ## enmiendas-ugt.html actualizada (2026-10-01): de 8 a 18 propuestas
 - La columna izquierda es el «Documento trabajo en MSN» de la Tabla del Rectorado (NO el texto de 2017; numeración distinta).
 - Enmienda del permiso parental movida del Art. 28.5 (que regula exámenes) al Art. 29.5. Nuevas: Arts. 12, 14, 15, 17.2.b, 23, 24.2, 28 (5, 11, 15), 29 (prematuros, 4 semanas), 31.1, 32.3, DA festivos en sábado; añadidos a 6.1.c (L-J), 8.3 y 10.5.
