@@ -19,6 +19,8 @@ Herramienta de análisis comparativo: propuesta de Instrucción Interna 2026 del
 ## Comandos
 
 - Sin servidor. Abrir `index.html` directamente en navegador.
+- Comprobar la web tras cada cambio: `cd tools && npm run check` (la primera vez, `npm install`). Usa Chrome local; debe terminar en "✔ Todo correcto".
+- Al modificar `main.css` o cualquier `.js`, actualizar la marca `?v=AAAAMMDD` de sus referencias en `index.html`.
 - Git: `git add -p`, commit descriptivo en español, push a `main`.
 
 ## Convenciones

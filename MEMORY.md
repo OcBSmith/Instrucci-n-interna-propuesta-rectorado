@@ -38,6 +38,10 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 6. ✅ Etiquetas «Línea roja» sustituidas por «Prioritario» en `enmiendas-ugt.html`.
 7. Crear `specs/` si el proyecto se amplía (metodología SDD).
 
+8. ✅ (2026-10-01) Prueba permanente en `tools/check-web.js` (26 comprobaciones); fichas accesibles con teclado (Tab, Intro/espacio, el foco vuelve al cerrar); marca de caché `?v=20261001` en CSS y JS.
+   - Fallo encontrado por la prueba y corregido: `.art-card-more{display:inline-flex}` anulaba `[hidden]` → 31 fichas mostraban un botón vacío desde el commit 0ca4980. Además, la medición del pliegue se repite tras cargar la fuente web.
+9. Pendiente externo: tablas de cuantías vigentes (Gerencia).
+
 ## Decisiones y por qué
 - **Voz impersonal**: credibilidad ante el Rectorado; nada que parezca un panfleto.
 - **Sin frameworks**: se abre con doble clic; audiencia no técnica.

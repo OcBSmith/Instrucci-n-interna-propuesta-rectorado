@@ -1,0 +1,11 @@
+{
+  "name": "instruccion-interna-tools",
+  "private": true,
+  "description": "Herramientas de comprobación local. La web no depende de esto.",
+  "scripts": {
+    "check": "node check-web.js"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}

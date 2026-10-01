@@ -10,3 +10,6 @@ normativa/*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Herramientas locales
+tools/node_modules/

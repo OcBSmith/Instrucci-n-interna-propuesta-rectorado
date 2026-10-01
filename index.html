@@ -15,7 +15,7 @@
 <title>Instrucción Interna UMA — Guía UGT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="main.css?v=20261001">
 
 <!-- ESTILO INLINE ELIMINADO — ver main.css -->
 <style>/* ver main.css */</style>
@@ -723,10 +723,10 @@
   </div>
 </dialog>
 
-<script src="filter.js"></script>
-<script src="accordion.js"></script>
-<script src="features.js"></script>
-<script src="art_texts.js?v=3"></script>
+<script src="filter.js?v=20261001"></script>
+<script src="accordion.js?v=20261001"></script>
+<script src="features.js?v=20261001"></script>
+<script src="art_texts.js?v=20261001"></script>
 <script>
 function filtrarArts(cat, btn) {
   document.querySelectorAll('#artGrid .art-card').forEach(function(c) {
@@ -802,8 +802,19 @@ function filtrarArts(cat, btn) {
     return html.join('');
   }
 
+  var ultimaFicha = null;
   document.querySelectorAll('#artGrid .art-card').forEach(function(card) {
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'group');
+    card.setAttribute('aria-haspopup', 'dialog');
+    var tit = (card.querySelector('.art-card-title') || {}).textContent || '';
+    card.setAttribute('aria-label', tit + ' — abrir texto literal');
+    card.addEventListener('keydown', function(e) {
+      if (e.target !== card) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
     card.addEventListener('click', function() {
+      ultimaFicha = card;
       var key = getArtKey(card);
       modalRef.textContent   = (card.querySelector('.art-card-ref')   || {}).textContent || '';
       modalTitle.textContent = (card.querySelector('.art-card-title') || {}).textContent || '';
@@ -816,6 +827,7 @@ function filtrarArts(cat, btn) {
     });
   });
 
+  modal.addEventListener('close', function() { if (ultimaFicha) ultimaFicha.focus(); });
   modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') modal.close(); });
 })();
@@ -851,6 +863,9 @@ function filtrarArts(cat, btn) {
     document.querySelectorAll('#artGrid .art-card-body').forEach(function(b) { aplicar(b, b._btn); });
   }
   todas();
+  // La altura cambia al cargar la fuente web: se vuelve a medir para no plegar fichas que no son largas.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(todas);
+  window.addEventListener('load', todas);
   var t;
   window.addEventListener('resize', function() { clearTimeout(t); t = setTimeout(todas, 150); });
   document.querySelectorAll('#articulos .filter-chip').forEach(function(c) {
