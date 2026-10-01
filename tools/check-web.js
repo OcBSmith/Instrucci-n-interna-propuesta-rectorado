@@ -153,7 +153,7 @@ async function pruebaAccesibilidad(browser) {
 
 async function pruebaPublicada() {
   console.log(`\nWeb publicada — ${PUBLICADA}`);
-  const norm = s => s.replace(/\r\n/g, '\n');
+  const norm = s => s.replace(/^﻿/, '').replace(/\r\n/g, '\n');
   for (const f of ['index.html', 'enmiendas-ugt.html', 'main.css', 'art_texts.js']) {
     try {
       const res = await fetch(PUBLICADA + f + '?nocache=' + Date.now());
