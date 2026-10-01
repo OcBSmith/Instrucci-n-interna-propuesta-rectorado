@@ -298,8 +298,10 @@ body {
 
 @media (max-width: 600px) {
   .header { flex-direction: column; gap: 10px; }
+  .articulado { table-layout: fixed; }
   .articulado thead th:first-child { width: 50%; }
-  .articulado td { padding: 8px 10px; font-size: 12.5px; }
+  .articulado thead th { white-space: normal; padding: 8px 10px; }
+  .articulado td { padding: 8px 10px; font-size: 12.5px; overflow-wrap: anywhere; }
   .ugt-inner { padding: 10px 10px 12px 10px; }
 }
 @media print {
@@ -318,13 +320,13 @@ body {
     <div class="header-meta">
       <span>Universidad de Málaga</span>
       <span>Mesa Sectorial de Negociación PTGAS</span>
-      <span>Septiembre 2026</span>
+      <span>Octubre 2026</span>
     </div>
   </div>
 </header>
 
 <p class="note">
-  Documento de trabajo basado en la Tabla Articulado de la Delegación del Rector en Materia de Personal (24/07/2026). Columna izquierda: instrucción vigente (MSN). Columna derecha: propuesta 2026 del Rectorado. Las filas resaltadas en rojo incluyen la posición de UGT. Las filas sin propuesta UGT se muestran sin añadidos.
+  Documento de trabajo basado en la Tabla Articulado de la Delegación del Rector en Materia de Personal (24/07/2026). Columna izquierda: «Documento trabajo en MSN» (denominación de la propia Tabla; su numeración no coincide con la del Texto Refundido de 2017). Columna derecha: propuesta 2026 del Rectorado. Las referencias a 2017 de las propuestas remiten al Texto Refundido vigente. Las filas resaltadas en rojo incluyen la posición de UGT. Las filas sin propuesta UGT se muestran sin añadidos.
 </p>
 
 <!-- ══════════════════════════════════════════════ -->
@@ -333,7 +335,7 @@ body {
 <table class="articulado">
   <thead>
     <tr>
-      <th>Instrucción vigente (MSN)</th>
+      <th>Documento trabajo en MSN</th>
       <th>Propuesta Rectorado 2026</th>
     </tr>
   </thead>
@@ -366,7 +368,7 @@ body {
           <div class="ugt-body">
             <p><strong>Enmienda al apartado 1:</strong> El número de días de cierre por eficiencia energética, los períodos en que se apliquen y los servicios esenciales que queden exceptuados <strong>deberán ser objeto de negociación con la Mesa Sectorial antes de su propuesta al Consejo de Gobierno</strong>, no de mera consulta posterior.</p>
             <p><strong>Nuevo apartado 3 (añadir):</strong> Los días de cierre por criterios de eficiencia energética no podrán superar en ningún caso el número de días de asuntos particulares reconocidos al personal. Cualquier exceso requerirá acuerdo expreso en Mesa Sectorial.</p>
-            <div class="ugt-justif">Los cierres energéticos han absorbido en la práctica la totalidad de los días de libre disposición del personal. UGT exige negociación real previa y un techo máximo de días que no pueda superarse sin acuerdo sindical.</div>
+            <div class="ugt-justif">El Art. 18.2 ya prevé la negociación del calendario conforme al Reglamento 3/2024, pero el articulado no fija un número máximo de días de cierre. Se propone un techo que no pueda superarse sin acuerdo expreso en la Mesa Sectorial.</div>
           </div>
         </div>
       </td>
@@ -394,8 +396,10 @@ body {
           <div class="ugt-label">Propuesta UGT — Art. 6.1.c y Art. 8.5</div>
           <div class="ugt-body">
             <p><strong>Art. 6.1.c — Jornada partida (nueva redacción):</strong> de 9:00 a 14:00, y de <strong>15:30 a 17:30</strong>. El tramo de tarde solo podrá modificarse por <strong>acuerdo expreso entre la persona trabajadora y la persona responsable del servicio</strong>, con conocimiento del órgano competente en materia de PTGAS y de los órganos de representación del personal. En ningún caso podrá imponerse unilateralmente.</p>
+            <p><strong>Art. 6.1.c — añadir:</strong> «En todo caso, el horario de tarde en jornada partida tendrá efecto de lunes a jueves.»</p>
+            <p><strong>Art. 8.3 (nueva redacción):</strong> «La parte flexible del horario y el tiempo recuperable podrán cumplirse por todo el personal, sin excepción de ningún colectivo, de lunes a viernes dentro del horario de apertura de los edificios, Centros, Servicios o Unidades, respetando las condiciones más beneficiosas para el personal y las necesidades del servicio.»</p>
             <p><strong>Art. 8.5 — Saldo positivo (nueva redacción):</strong> El saldo positivo existente a 31 de diciembre podrá ser compensado durante el primer trimestre del año siguiente <strong>a solicitud de la persona interesada, sin necesidad de autorización previa</strong>. La denegación deberá ser motivada por escrito en el plazo de diez días hábiles.</p>
-            <div class="ugt-justif">El Art. 6.1.c actual permite al Centro modificar el bloque de tarde sin participación del trabajador. El Art. 8.5 actual exige "autorización excepcional" para compensar tiempo ya trabajado, creando inseguridad jurídica.</div>
+            <div class="ugt-justif">El Art. 6.1.c propuesto permite al Centro pedir la modificación del tramo de tarde sin participación de la persona trabajadora. El Art. 8.5 propuesto añade una autorización previa que el Art. 3.4 de 2017 no exigía. El Art. 4.1 de 2017 limitaba la tarde de la jornada partida a lunes a jueves, y los Arts. 3.2.b y 3.5 garantizaban el uso del tiempo flexible por todo el personal y las condiciones más beneficiosas.</div>
           </div>
         </div>
       </td>
@@ -404,13 +408,42 @@ body {
     <!-- Art. 6 -->
     <tr class="art-row">
       <td>Artículo 6. Horario especial (HE).</td>
-      <td>Artículo 12. Horario especial.</td>
+      <td>
+        Artículo 12. Horario especial.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 12</div>
+          <div class="ugt-body">
+            <p><strong>Sustituir el último inciso</strong> («En estos supuestos, no resultará de aplicación la regulación específica relativa al exceso de jornada») por: «El acuerdo por el que se establezca cada horario especial fijará expresamente el régimen de compensación del exceso de jornada; en su defecto, será de aplicación el artículo 14.»</p>
+            <div class="ugt-justif">En 2017 (Art. 25) la compensación del exceso de jornada no excluía a ningún colectivo. La exclusión propuesta dejaría sin compensación garantizada al personal con horario especial.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 7 -->
     <tr class="art-row">
       <td>Artículo 7. Disponibilidad horaria (DH).</td>
-      <td>Artículo 14. Horas de disponibilidad y exceso de jornada.</td>
+      <td>
+        Artículo 14. Horas de disponibilidad y exceso de jornada.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 14</div>
+          <div class="ugt-body">
+            <p><strong>Art. 14.1 y 14.2:</strong> sustituir «entre las 8:00 y las 22:00 horas» por «entre las 8:00 y las 21:30 horas».</p>
+            <p><strong>Art. 14.3.a (nueva redacción):</strong> «Con carácter general, con dos horas por cada hora trabajada o 22 €/hora, a elección de la persona trabajadora.»</p>
+            <div class="ugt-justif">El Art. 21.1 de 2017 limitaba la exigibilidad a las 21:30 y el Art. 25 reconocía la elección entre descanso o retribución. El Acuerdo del complemento de homologación (apartado séptimo) no fija franja horaria: la ampliación a las 22:00 es una decisión de la Universidad.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 8 → Art. 10 VERANO — LÍNEA ROJA -->
@@ -427,8 +460,9 @@ body {
           <div class="ugt-label">Propuesta UGT — Art. 10 · Línea roja</div>
           <div class="ugt-body">
             <p><strong>Apartado 1 (nueva redacción):</strong> Para favorecer la conciliación, durante el periodo comprendido entre el <strong>1 de julio y el 30 de septiembre</strong>, el horario diario quedará establecido, con carácter general, en cinco horas diarias. <em>(La propuesta del Rectorado solo garantiza julio–agosto.)</em></p>
+            <p><strong>Apartado 5 — suprimir</strong> («Esta reducción no será acumulable a la reducción de jornada por motivo de la edad»).</p>
             <p><strong>Nuevo apartado 7 (añadir):</strong> Cuando mediante Resolución Rectoral se reduzca el período fijado en el apartado primero, el Rector deberá <strong>motivarlo expresamente por escrito</strong> y remitir la motivación a la Mesa Sectorial con al menos 30 días naturales de antelación.</p>
-            <div class="ugt-justif">La práctica consolidada desde 2020 incluyó septiembre como mes de horario reducido. La propuesta del Rectorado regresa a dos meses y deja cualquier ampliación a discrecionalidad rectoral anual. UGT exige blindar los tres meses en el articulado y que toda reducción sea motivada y negociada.</div>
+            <div class="ugt-justif">Por Resolución del Rector, el horario reducido se aplicó del 16 de junio al 15 de septiembre en 2024 (Resolución de 27 de mayo de 2024) y del 16 de junio al 8 de septiembre en 2025 (Resolución de 6 de junio de 2025). La propuesta solo garantiza julio y agosto y deja cualquier ampliación a una resolución anual. El Art. 10.5 propuesto, además, impide acumular esta reducción con la reducción por edad, algo que el Art. 15 de 2017 no establecía.</div>
           </div>
         </div>
       </td>
@@ -449,13 +483,41 @@ body {
     <!-- Art. 11 -->
     <tr class="art-row">
       <td>Artículo 11. Ausencias por enfermedad.</td>
-      <td>Artículo 31. Ausencias por enfermedad.</td>
+      <td>
+        Artículo 31. Ausencias por enfermedad.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 31.1</div>
+          <div class="ugt-body">
+            <p><strong>Nueva redacción del límite:</strong> «Las ausencias justificadas mediante declaración jurada no podrán superar seis días al año ni tres ausencias en cada año natural, sin que la duración de cada una pueda superar los tres días. Este límite no se aplicará a las ausencias justificadas mediante volante médico.»</p>
+            <div class="ugt-justif">En 2017 (Art. 8) el límite de ausencias se refería solo a las producidas «sin justificación médica». La redacción propuesta lo aplica también a las ausencias con volante médico.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 12 -->
     <tr class="art-row">
       <td>Artículo 12. Ausencias por causa de fuerza mayor.</td>
-      <td>Artículo 32. Ausencias por causa de fuerza mayor.</td>
+      <td>
+        Artículo 32. Ausencias por causa de fuerza mayor.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 32</div>
+          <div class="ugt-body">
+            <p><strong>Nuevo apartado 3 (añadir):</strong> «Las ausencias previstas en el apartado 1 serán retribuidas hasta el equivalente a cuatro días al año y no se imputarán a los días de asuntos particulares.»</p>
+            <div class="ugt-justif">El art. 37.9 del Estatuto de los Trabajadores, introducido por el Real Decreto-ley 5/2023, reconoce como retribuidas estas ausencias hasta el equivalente a cuatro días al año para el personal laboral. Ni el EBEP ni la Ley 5/2023 de Función Pública de Andalucía lo regulan para el personal funcionario; se propone un régimen común para todo el PTGAS.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 13 → Art. 13 CONTROL HORARIO — LÍNEA ROJA -->
@@ -472,7 +534,7 @@ body {
           <div class="ugt-label">Propuesta UGT — Art. 13.5 · Línea roja</div>
           <div class="ugt-body">
             <p><strong>Apartado 5 (nueva redacción):</strong> El <strong>incumplimiento reiterado y no justificado</strong> de la obligación de registro horario podrá dar lugar a responsabilidades disciplinarias, previa apertura del correspondiente procedimiento. Los errores puntuales o las omisiones causadas por <strong>fallos técnicos del sistema implantado por la Universidad no podrán ser objeto de expediente disciplinario</strong> y se subsanarán mediante declaración responsable. En ningún caso se aplicarán deducciones de haberes automáticas sin que conste previamente la realidad de la ausencia.</p>
-            <div class="ugt-justif">La redacción actual permite expedientar cualquier olvido de fichar, incluyendo averías del lector. El sistema de fichaje es un instrumento de la Universidad; sus fallos no pueden trasladarse al trabajador como responsabilidad disciplinaria.</div>
+            <div class="ugt-justif">La redacción propuesta permite exigir responsabilidad disciplinaria por cualquier incumplimiento del registro, sin distinguir los fallos técnicos del sistema. El Art. 7 de 2017 no contenía esta previsión.</div>
           </div>
         </div>
       </td>
@@ -489,11 +551,12 @@ body {
     <tr class="ugt-row">
       <td colspan="2">
         <div class="ugt-inner">
-          <div class="ugt-label">Propuesta UGT — Art. 28 §5 (Permiso parental)</div>
+          <div class="ugt-label">Propuesta UGT — Art. 28 (permisos ordinarios)</div>
           <div class="ugt-body">
-            <p><strong>Apartado 5 — única modificación: sustituir «no retribuido» por «retribuido».</strong></p>
-            <p>Las personas trabajadoras tendrán derecho a un permiso parental <strong>retribuido</strong>, para el cuidado de hijo, hija o menor acogido por tiempo superior a un año, hasta el momento en que el menor cumpla ocho años. [Resto del artículo sin modificación.]</p>
-            <div class="ugt-justif">La Directiva (UE) 2019/1158 exige remuneración adecuada durante el permiso parental (art. 8). El carácter no retribuido lo hace inejercible para familias con menores ingresos y discrimina indirectamente a las mujeres. La UMA tiene competencia para mejorar el mínimo legal.</div>
+            <p><strong>Art. 28.5 — suprimir el último inciso:</strong> «La concurrencia a pruebas celebradas en la Universidad de Málaga para la provisión de puestos de trabajos de la RPT será por el tiempo indispensable de las mismas.» Las pruebas internas quedarían cubiertas, como en 2017, «durante los días de su celebración».</p>
+            <p><strong>Art. 28.11 — suprimir «obligatorias»:</strong> «Siempre que las necesidades del servicio lo permitan, los días de permiso por asuntos particulares podrán acumularse a los días de vacaciones.»</p>
+            <p><strong>Art. 28.15 — incorporar la regla de 2017 (Art. 5.3):</strong> «En el período de Navidad, el PTGAS disfrutará de descanso entre los días 24 de diciembre y 6 de enero, ambos inclusive; y en Semana Santa disfrutará de descanso los tres días no festivos, además del viernes previo o el lunes posterior, estableciéndose turnos en cada Servicio que garanticen la correcta prestación de los servicios universitarios.»</p>
+            <div class="ugt-justif">El Art. 10.4 de 2017 cubría las pruebas de aptitud durante los días de su celebración, y el Art. 10.10.d permitía acumular los asuntos particulares a cualquier periodo de vacaciones. El Art. 28.15 propuesto reproduce el art. 33.1 del IV Convenio del PAS laboral (5 días por turnos más el 24 y el 31), mientras que los calendarios laborales del PTGAS de 2025 y 2026 aprueban los cierres de Navidad y Semana Santa «de conformidad con el artículo 5.3 de la Instrucción Interna». En 2027–2028, con el 25 de diciembre en sábado (Decreto 84/2026), la regla de 2017 daría 9 días laborables de descanso y la propuesta, 7.</div>
           </div>
         </div>
       </td>
@@ -513,7 +576,7 @@ body {
           <div class="ugt-label">Propuesta UGT — Art. 30</div>
           <div class="ugt-body">
             <p><strong>Nueva redacción:</strong> El PTGAS que lleve como mínimo un año al servicio de la Universidad tendrá derecho, si las necesidades del servicio lo permiten, a una licencia no retribuida con una duración mínima de 7 días naturales y máxima de <strong>seis meses</strong>, no pudiendo solicitarla más de una vez <strong>al año</strong>. La denegación deberá ser motivada por escrito. El silencio de la Administración transcurridos 30 días tendrá carácter <strong>estimatorio</strong> cuando la solicitud se presente con al menos 45 días de antelación.</p>
-            <div class="ugt-justif">El límite de tres meses no cubre necesidades vitales razonables. La restricción de "una vez cada dos años agotando el máximo" impide licencias cortas sucesivas. El silencio debe ser estimatorio para que el derecho sea efectivo.</div>
+            <div class="ugt-justif">El límite de tres meses resulta corto para algunas necesidades personales. La restricción bienal, que ya existía en 2017, solo opera cuando se agotan los tres meses; se propone sustituirla por un límite anual. El silencio estimatorio da seguridad a la persona solicitante.</div>
           </div>
         </div>
       </td>
@@ -528,7 +591,23 @@ body {
     <!-- Art. 17 -->
     <tr class="art-row">
       <td>Artículo 17. Permisos para la conciliación.</td>
-      <td>Artículo 29. Permisos para la conciliación y protección social.</td>
+      <td>
+        Artículo 29. Permisos para la conciliación y protección social.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 29</div>
+          <div class="ugt-body">
+            <p><strong>Art. 29.1 y 29.3 — añadir:</strong> «Por nacimiento de hijos prematuros o que por cualquier otra causa deban permanecer hospitalizados a continuación del parto, la persona empleada tendrá derecho a ausentarse del trabajo durante un máximo de dos horas diarias percibiendo las retribuciones íntegras, y a reducir su jornada hasta un máximo de dos horas con la disminución proporcional de sus retribuciones.»</p>
+            <p><strong>Art. 29.4 (nueva redacción):</strong> «Una vez disfrutado íntegramente el permiso por nacimiento, adopción, guarda con fines de adopción o acogimiento, cada persona progenitora, adoptante, guardadora o acogedora tendrá derecho a un permiso adicional retribuido de cuatro semanas.»</p>
+            <p><strong>Art. 29.5 — sustituir «no retribuido» por «retribuido»</strong> en el permiso parental. [Resto del apartado sin modificación.]</p>
+            <div class="ugt-justif">El Art. 13.a de 2017 recogía las dos horas por hijo prematuro (también en el art. 48.g del EBEP) y las «cuatro semanas ininterrumpidas más adicionales» (16 + 4 = 20 semanas). La propuesta remite la duración del permiso adicional a la «normativa vigente», pero el Decreto 347/2003, origen de esas semanas, solo se aplica a la Administración General de la Junta, y ni la Ley 5/2023 (arts. 3.1.c y 38) ni el EBEP (art. 49) las prevén. Sobre el permiso parental, la Directiva (UE) 2019/1158 (art. 8.3) prevé una remuneración o prestación económica que no se ha desarrollado en España; su retribución sería una mejora negociada.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 18 -->
@@ -540,13 +619,41 @@ body {
     <!-- Art. 19 -->
     <tr class="art-row">
       <td>Artículo 19. Bolsa de horas para la conciliación.</td>
-      <td>Artículo 23. Bolsa de horas para la conciliación.</td>
+      <td>
+        Artículo 23. Bolsa de horas para la conciliación.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 23</div>
+          <div class="ugt-body">
+            <p><strong>Suprimir el último inciso:</strong> «A efectos de aplicación de esta bolsa de horas, la duración del tiempo de presencia obligatoria no sufrirá alteración, salvo que las necesidades del servicio lo permitan y tenga el visto bueno de la persona responsable del mismo.»</p>
+            <div class="ugt-justif">El Art. 15.2 de 2017 no condicionaba el uso de la bolsa de 28 horas a la presencia obligatoria ni al visto bueno de la persona responsable.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 20 -->
     <tr class="art-row">
       <td>Artículo 20. Reducción de jornada por razón de edad.</td>
-      <td>Artículo 24. Reducción de la jornada por razón de edad y discapacidad.</td>
+      <td>
+        Artículo 24. Reducción de la jornada por razón de edad y discapacidad.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 24.2</div>
+          <div class="ugt-body">
+            <p><strong>Nueva redacción:</strong> «A partir de la edad de jubilación, en caso de que se reconozca la prolongación voluntaria de la permanencia en el servicio activo, se mantendrá una reducción de una hora diaria, que se aplicará en la parte flexible del horario.»</p>
+            <div class="ugt-justif">El Art. 15.3 de 2017 reconocía dos horas de reducción a partir de los 63 años, sin excluir la prolongación del servicio activo. La propuesta suprime toda reducción durante la prolongación voluntaria.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 21 -->
@@ -582,13 +689,42 @@ body {
     <!-- Art. 26 -->
     <tr class="art-row">
       <td>Artículo 26. Prestación de servicios en sábado, domingo o festivos.</td>
-      <td>Artículo 17. Prestación de servicios en sábados, domingos y festivos.</td>
+      <td>
+        Artículo 17. Prestación de servicios en sábados, domingos y festivos.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 17.2.b</div>
+          <div class="ugt-body">
+            <p><strong>Nueva redacción:</strong> «b) Trabajo en sábado o domingo en horario de mañana sin descanso: 78,54 €.» (se suprime «festivo», de modo que todo festivo sin descanso se compense por la letra c).</p>
+            <div class="ugt-justif">En 2017 (Art. 25) el festivo sin descanso se compensaba siempre con la tarifa superior. En la propuesta, «festivo» aparece en las letras b y c (comprobado en el PDF original, página 11).</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- Art. 27 -->
     <tr class="art-row">
       <td>Artículo 27. Trabajos de asistencia y apoyo que conlleven una jornada superior a la ordinaria.</td>
-      <td>Artículo 15. Trabajos de asistencia y apoyo que conlleven una jornada superior a la ordinaria.</td>
+      <td>
+        Artículo 15. Trabajos de asistencia y apoyo que conlleven una jornada superior a la ordinaria.
+        <span class="chip chip-enmien">Enmienda</span>
+      </td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Art. 15</div>
+          <div class="ugt-body">
+            <p><strong>Art. 15.1 — requisitos (añadir):</strong> «2.º Informe previo del Comité de Empresa y/o Junta de Personal», pasando la aceptación del personal a ser el requisito 3.º.</p>
+            <p><strong>Art. 15.1 — ámbito:</strong> reincorporar las <strong>mudanzas</strong> a la relación de actividades y precisar qué se entiende por actividades «que no se correspondan con las funciones ordinarias del puesto de trabajo».</p>
+            <div class="ugt-justif">El Art. 26 de 2017 exigía el informe previo del Comité de Empresa y/o Junta de Personal e incluía expresamente las mudanzas. En la propuesta (Art. 15.3) la representación solo «será informada».</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- DA 1 -->
@@ -606,7 +742,18 @@ body {
     <!-- DA 3 — suprimida en propuesta -->
     <tr class="art-row">
       <td>DA 3. Festividades laborales que coincidan en sábado.</td>
-      <td class="empty">— suprimida en propuesta 2026 —</td>
+      <td class="empty">— suprimida en propuesta 2026 — <span class="chip chip-enmien">Enmienda</span></td>
+    </tr>
+    <tr class="ugt-row">
+      <td colspan="2">
+        <div class="ugt-inner">
+          <div class="ugt-label">Propuesta UGT — Reincorporar la DA sobre festivos en sábado</div>
+          <div class="ugt-body">
+            <p><strong>Nueva disposición adicional:</strong> «Por cada festividad laboral de ámbito nacional o autonómico que coincida en sábado, el PTGAS disfrutará de un día de libre disposición, que se concretará en el calendario laboral.»</p>
+            <div class="ugt-justif">La disposición figuraba en el documento de trabajo en MSN y no aparece en la propuesta. Los calendarios laborales del PTGAS de 2025 y 2026 ya compensan estos festivos (días 22 y 23 de diciembre), pero año a año; se propone convertirlo en regla estable.</div>
+          </div>
+        </div>
+      </td>
     </tr>
 
     <!-- DA 4 -->
@@ -636,7 +783,7 @@ body {
           <div class="ugt-body">
             <p>UGT propone añadir una <strong>Disposición Adicional Quinta</strong> que regule formalmente la Comisión de Interpretación y Vigilancia de la Instrucción (CIVI), órgano mencionado en el preámbulo de la propuesta pero no articulado en ningún precepto.</p>
             <p><strong>Composición paritaria:</strong> 4 representantes de la Universidad + 4 representantes sindicales en proporción electoral. <strong>Periodicidad:</strong> reunión ordinaria trimestral + extraordinaria a petición de cualquier miembro. <strong>Efecto vinculante:</strong> sus resoluciones interpretativas son de obligado cumplimiento para todos los Centros, Servicios y Unidades.</p>
-            <div class="ugt-justif">Una comisión anunciada en el preámbulo sin composición, competencias ni procedimiento no ofrece garantías reales. La DT de la instrucción vigente ya la preveía; la propuesta 2026 la elimina. UGT exige que figure en el articulado con participación sindical garantizada.</div>
+            <div class="ugt-justif">La Comisión solo se anuncia en el Preámbulo, sin composición, competencias ni procedimiento. La Disposición Transitoria de 2017 la constituía con composición paritaria y funciones de interpretación, actualización e información sobre la aplicación. Se propone que figure en el articulado.</div>
           </div>
         </div>
       </td>
@@ -663,7 +810,7 @@ body {
 <table class="articulado" style="margin-top:0">
   <thead>
     <tr>
-      <th>Instrucción vigente (MSN)</th>
+      <th>Documento trabajo en MSN</th>
       <th>Propuesta Rectorado 2026 — artículo nuevo</th>
     </tr>
   </thead>
@@ -695,7 +842,7 @@ body {
           <div class="ugt-label">Propuesta UGT — Art. 9 (nuevo)</div>
           <div class="ugt-body">
             <p><strong>Nuevo apartado 4 (añadir):</strong> El personal con derecho reconocido a teletrabajo podrá ejercerlo con un <strong>mínimo garantizado de dos días semanales</strong> en modalidad no presencial. La denegación o suspensión del teletrabajo deberá ser <strong>motivada y comunicada con al menos cinco días hábiles de antelación</strong>, salvo urgencia acreditada. En ningún caso la negativa o retirada del teletrabajo podrá tener consecuencias disciplinarias ni evaluativas negativas.</p>
-            <div class="ugt-justif">El artículo del Rectorado reproduce el mínimo legal sin añadir garantías. UGT exige que los días reconocidos sean efectivos y que la revocación arbitraria quede expresamente prohibida como causa de sanción o calificación negativa.</div>
+            <div class="ugt-justif">El Art. 9 remite al Reglamento 10/2024, de 23 de julio, de teletrabajo del PTGAS, que no fija un número mínimo de días (los pacta el Plan Individual, art. 11.1) y permite exigir presencia con 24 horas de aviso (art. 11.5). Se propone fijar un mínimo y reforzar la motivación de la denegación o suspensión.</div>
           </div>
         </div>
       </td>
@@ -730,7 +877,7 @@ body {
 
 <footer class="doc-footer">
   <span class="mark">UGT · PTGAS-UMA</span>
-  <span>Mesa Sectorial de Negociación · Universidad de Málaga · Septiembre 2026</span>
+  <span>Mesa Sectorial de Negociación · Universidad de Málaga · Octubre 2026</span>
 </footer>
 
 </div>

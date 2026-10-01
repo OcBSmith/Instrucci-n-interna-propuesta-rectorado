@@ -50,6 +50,13 @@ Errores de fondo corregidos: Art. 9 decía que no existía normativa de teletrab
 ## Cotejo modal (art_texts.js) con el OCR (2026-10-01)
 Comparación palabra a palabra de 40 entradas: arts. 1-32 y DA/DT coinciden (las diferencias son solo erratas del OCR corregidas: espacios, "12/22/32" → 1.º/2.º/3.º, "300" → "30 o"). Corregido: el Art. 5.2.c omitía una frase; "civi_preambulo" y "da_festivos_sabado" contenían redacción propia con afirmaciones no verificadas bajo la etiqueta "texto literal" → ahora cita literal del Preámbulo y nota neutra. Caché `art_texts.js?v=3`.
 
+## enmiendas-ugt.html actualizada (2026-10-01): de 8 a 18 propuestas
+- La columna izquierda es el «Documento trabajo en MSN» de la Tabla del Rectorado (NO el texto de 2017; numeración distinta).
+- Enmienda del permiso parental movida del Art. 28.5 (que regula exámenes) al Art. 29.5. Nuevas: Arts. 12, 14, 15, 17.2.b, 23, 24.2, 28 (5, 11, 15), 29 (prematuros, 4 semanas), 31.1, 32.3, DA festivos en sábado; añadidos a 6.1.c (L-J), 8.3 y 10.5.
+- Las nuevas redacciones son BORRADORES basados en las posiciones de las fichas: pendientes de validación por la sección sindical.
+- Hechos verificados: horario reducido 16/06–15/09/2024 y 16/06–08/09/2025 (resoluciones rectorales); Reglamento 10/2024 de teletrabajo sin mínimo de días (art. 11.1). Licencia no retribuida: la restricción bienal solo aplica tras agotar los 3 meses.
+- Pendiente de decisión: chips «🔴 Línea roja» (Arts. 10 y 13); la enmienda del Art. 10 propone del 1 de julio al 30 de septiembre, distinto de la práctica real (16 de junio a mediados de septiembre).
+
 ## Aprendizajes y errores a evitar
 - Leer el artículo completo, no solo el titular (Art. 24.2 se omitió al principio).
 - Los hallazgos de "ausencia" deben confirmarse con grep literal en el OCR.

@@ -13,4 +13,7 @@ Copias locales (PDF + `.txt` con `pdftotext -enc UTF-8 -layout`) no versionadas,
 | UMA_Calendario_laboral_2026_PDI | https://www.uma.es/media/files/Acuerdo_Calendario_laboral_2026.pdf |
 | IV_Convenio_PAS_laboral_Univ_Andalucia_UPO | https://www.upo.es/cms1/export/sites/upo/cepl/documentos/convenio_colectivo.pdf (copia UPO del texto de 2004, BOJA 36 de 23-02-2004) |
 | Acuerdo_homologacion_PAS_anexo2_UCO | https://uco.es/organiza/personal/sindicatos/csif/documentos/fun/mesa_univ_andalucia/ms_acuerdo_homologacion_anexo2.pdf |
+| UMA_Reglamento_10-2024_teletrabajo_PTGAS | https://www.uma.es/secretaria-general-uma/navegador_de_ficheros/boletin/descargar/2024/julio/Reglamento%20XX2024,%20por%20el%20que%20se%20regula%20el%20teletrabajo%20para%20el%20PTGAS%20de%20la%20UMA_definitivo.pdf |
+| UMA_Resolucion_horario_reducido_PTGAS_2024 | https://www.uma.es/ptgas/navegador_de_ficheros/Resoluciones_y_Acuerdos/descargar/RESOLUCIONES/2024/20240527_Resolucio%CC%81n_horario_reducido_PTGAS.pdf |
+| UMA_Resolucion_horario_reducido_PTGAS_2025 | https://www.uma.es/ptgas/navegador_de_ficheros/Resoluciones_y_Acuerdos/descargar/RESOLUCIONES/2025/20250606_Resolucion_horario_reducido_PTGAS.report.pdf |
 | Acuerdos_homologacion_UJA | https://www.ujaen.es/servicios/servpod/sites/servicio_servpod/files/uploads/normativa/acuerdos%20de%20homologacion.pdf |
