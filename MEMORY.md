@@ -44,8 +44,13 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 - **OCR como fuente primaria**; ante dudas de OCR, contrastar con el PDF original.
 - **Compartir es legal**: Reglamento 3/2024 arts. 2.2 y 10.5.
 
+## Auditoría completa de las 39 fichas (2026-10-01) — 46 correcciones
+Errores de fondo corregidos: Art. 9 decía que no existía normativa de teletrabajo (existe: Reglamento 10/2024, de 23 de julio); Art. 20 presentaba como mejora los 18 meses tras IT (ya estaban en 2017, Art. 19.2); Art. 21 le atribuía incompatibilidades y cómputo que no regula; DA 2ª decía que admite declaración responsable (no la prevé); DA MSN citaba festivos en sábado de 2024 equivocados y un convenio no verificado; Art. 32 atribuía a la Directiva la obligación de retribuir (es el art. 37.9 ET: 4 días, personal laboral); Art. 14: la disponibilidad solo se compensa en tiempo; Art. 27 "nula de pleno derecho"; Art. 25 "estudios médicos"; Art. 22 describía mal el régimen de 2017. "Gerencia" sustituido por el órgano competente en materia de PTGAS (lo que dice el texto de 2026).
+
 ## Aprendizajes y errores a evitar
 - Leer el artículo completo, no solo el titular (Art. 24.2 se omitió al principio).
 - Los hallazgos de "ausencia" deben confirmarse con grep literal en el OCR.
 - No hardcodear contadores. No afirmar "veto" ni "se mantiene" sin cotejar las dos versiones.
 - Las normas autonómicas (Junta) no se aplican directamente a la UMA: comprobar el ámbito antes de citarlas.
+- Las afirmaciones sobre hechos externos (prácticas pasadas, otros convenios, estudios, normativa "inexistente") son las que más fallan: verificar con fuente o eliminarlas.
+- En 2026 el órgano no es "Gerencia", sino "el órgano que ostente las competencias en materia de PTGAS".
