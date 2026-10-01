@@ -817,6 +817,44 @@ function filtrarArts(cat, btn) {
   modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') modal.close(); });
 })();
+// Pliegue de fichas largas: se recortan con "Ver más" para que la rejilla siga siendo legible.
+(function() {
+  var LIMITE = 420;
+  document.querySelectorAll('#artGrid .art-card-body').forEach(function(body) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'art-card-more';
+    btn.hidden = true;
+    body.insertAdjacentElement('afterend', btn);
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      body.dataset.abierta = body.dataset.abierta === '1' ? '' : '1';
+      aplicar(body, btn);
+      if (!body.dataset.abierta) body.closest('.art-card').scrollIntoView({ block: 'nearest' });
+    });
+    body._btn = btn;
+  });
+  function aplicar(body, btn) {
+    if (body.offsetParent === null) return;
+    body.classList.remove('is-collapsed');
+    var larga = body.scrollHeight > LIMITE;
+    btn.hidden = !larga;
+    if (!larga) return;
+    var abierta = body.dataset.abierta === '1';
+    body.classList.toggle('is-collapsed', !abierta);
+    btn.textContent = abierta ? 'Ver menos ▴' : 'Ver más ▾';
+    btn.setAttribute('aria-expanded', abierta ? 'true' : 'false');
+  }
+  function todas() {
+    document.querySelectorAll('#artGrid .art-card-body').forEach(function(b) { aplicar(b, b._btn); });
+  }
+  todas();
+  var t;
+  window.addEventListener('resize', function() { clearTimeout(t); t = setTimeout(todas, 150); });
+  document.querySelectorAll('#articulos .filter-chip').forEach(function(c) {
+    c.addEventListener('click', function() { setTimeout(todas, 0); });
+  });
+})();
 
 function imprimirPDF() {
   // Abrir todos los acordeones para que aparezcan en el PDF
