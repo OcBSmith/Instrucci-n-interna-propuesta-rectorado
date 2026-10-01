@@ -14,3 +14,6 @@ desktop.ini
 # Herramientas locales
 tools/node_modules/
 tools/out/
+
+# Informes internos de negociación (NO publicar: el repositorio es público)
+revision/

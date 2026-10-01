@@ -20,6 +20,7 @@ Herramienta de análisis comparativo: propuesta de Instrucción Interna 2026 del
 
 - Sin servidor. Abrir `index.html` directamente en navegador.
 - Comprobar la web tras cada cambio: `cd tools && npm run check` (la primera vez, `npm install`). Usa Chrome local; debe terminar en "✔ Todo correcto".
+- Evaluar las enmiendas UGT: `/evaluar-enmiendas` (todas) o `/evaluar-enmiendas Art. 14` (una). Lo coordina el agente `orquestador-enmiendas`, que delega cada propuesta en `evaluador-enmiendas` (solo lectura, comprueba fuentes y redacta en lenguaje claro para la plantilla) y escribe `revision/evaluacion-enmiendas.md`. Esa carpeta NO se versiona: el repositorio es público.
 - Al modificar `main.css` o cualquier `.js`, actualizar la marca `?v=AAAAMMDD` de sus referencias en `index.html`.
 - Git: `git add -p`, commit descriptivo en español, push a `main`.
 
