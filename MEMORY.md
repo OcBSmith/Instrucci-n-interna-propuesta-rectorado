@@ -35,7 +35,7 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 3. **Comprobar vigencia del IV Convenio** (copia UPO de 2004): buscar modificaciones posteriores en el BOJA.
 4. ✅ Web probada (2026-10-01) con playwright-core + Chrome local desde un script en scratchpad (no hace falta MCP): 0 errores de consola, contadores 14/8/7/10, sin desbordamiento a 375 px. Corregido el CSS móvil que cortaba 18 etiquetas con "…". Separación de 8 px entre bloques de `.art-card-body` añadida. Pliegue automático: las fichas con cuerpo > 420 px se recortan a 300 px con botón "Ver más/Ver menos" (script inline en index.html, tras el del modal; el botón hace stopPropagation para no abrir el modal; en impresión se despliegan todas). Pliegan 6 fichas en escritorio y 12 en móvil.
 5. **NotebookLM MCP**: falta `setup_auth` vía CLI.
-6. `enmiendas-ugt.html` muestra "🔴 Línea roja" como chip y etiqueta visibles (Arts. 10 y 13.5, líneas ~421-472): decidir si se mantiene, porque choca con la regla de tono no belicoso.
+6. ✅ Etiquetas «Línea roja» sustituidas por «Prioritario» en `enmiendas-ugt.html`.
 7. Crear `specs/` si el proyecto se amplía (metodología SDD).
 
 ## Decisiones y por qué
@@ -55,7 +55,7 @@ Comparación palabra a palabra de 40 entradas: arts. 1-32 y DA/DT coinciden (las
 - Enmienda del permiso parental movida del Art. 28.5 (que regula exámenes) al Art. 29.5. Nuevas: Arts. 12, 14, 15, 17.2.b, 23, 24.2, 28 (5, 11, 15), 29 (prematuros, 4 semanas), 31.1, 32.3, DA festivos en sábado; añadidos a 6.1.c (L-J), 8.3 y 10.5.
 - Las nuevas redacciones son BORRADORES basados en las posiciones de las fichas: pendientes de validación por la sección sindical.
 - Hechos verificados: horario reducido 16/06–15/09/2024 y 16/06–08/09/2025 (resoluciones rectorales); Reglamento 10/2024 de teletrabajo sin mínimo de días (art. 11.1). Licencia no retribuida: la restricción bienal solo aplica tras agotar los 3 meses.
-- Pendiente de decisión: chips «🔴 Línea roja» (Arts. 10 y 13); la enmienda del Art. 10 propone del 1 de julio al 30 de septiembre, distinto de la práctica real (16 de junio a mediados de septiembre).
+- Decidido (2026-10-01): las etiquetas «Línea roja» se sustituyen por «Prioritario» (tono técnico ante la Mesa); el Art. 10 se alinea con la práctica real: del 16 de junio al 15 de septiembre (Resolución de 27-05-2024), en enmiendas y en la ficha.
 
 ## Aprendizajes y errores a evitar
 - Leer el artículo completo, no solo el titular (Art. 24.2 se omitió al principio).
