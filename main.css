@@ -1,6 +1,6 @@
 :root {
   --bg:#F5F6F9; --bg-card:#FFFFFF; --bg-muted:#ECEEF3;
-  --border:#D4D8E2; --text:#1A2235; --text-2:#4A5470; --text-3:#7A82A0;
+  --border:#D4D8E2; --text:#1A2235; --text-2:#4A5470; --text-3:#5F6783;
   --navy:#1B3055; --navy-mid:#2C4A78;
   --brand:#E30613; --brand-dark:#B3040F; --brand-soft:#FDE7E9; --brand-line:#F1B7BC;
   --red:#D84315; --red-soft:#FBEBE4; --red-line:#EFBBA4;
@@ -194,7 +194,7 @@ body{background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-u
 .filter-chip.active.chip-blue{background:var(--navy-mid);border-color:var(--navy-mid);box-shadow:0 2px 8px rgba(44,74,120,.25)}
 .filter-chip.active.chip-amber{background:var(--amber);border-color:var(--amber);box-shadow:0 2px 8px rgba(154,96,0,.25)}
 .filter-chip-count{background:rgba(0,0,0,.08);padding:1px 6px;border-radius:10px;font-size:11px;font-family:'IBM Plex Mono',monospace}
-.filter-chip.active .filter-chip-count{background:rgba(255,255,255,.25);color:#fff}
+.filter-chip.active .filter-chip-count{background:rgba(0,0,0,.18);color:#fff}
 .filter-count-info{font-size:13px;color:var(--text-3);font-family:'IBM Plex Mono',monospace;margin-left:auto}
 
 /* ── MAPPING TABLE ── */
@@ -225,7 +225,7 @@ body{background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-u
 .pill{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;letter-spacing:.04em;white-space:nowrap}
 .pill-ok{background:var(--green-soft);color:var(--green);border:1px solid var(--green-line)}
 .pill-alert{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber-line)}
-.pill-warn{background:var(--red-soft);color:var(--red);border:1px solid var(--red-line)}
+.pill-warn{background:var(--red-soft);color:#B23A0E;border:1px solid var(--red-line)}
 .pill-neutral{background:var(--bg-muted);color:var(--text-3);border:1px solid var(--border)}
 .pill-merged{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber-line)}
 .pill-split{background:#EEF0FF;color:#4050A0;border:1px solid #B0B8E0}
@@ -522,7 +522,11 @@ dialog.consult-dialog::backdrop{background:rgba(0,0,0,.45)}
 .art-card-more{display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:4px 10px;font:inherit;font-size:12px;font-weight:700;color:var(--brand);background:none;border:1px solid var(--border);border-radius:20px;cursor:pointer}
 .art-card-more:hover,.art-card-more:focus-visible{background:var(--bg-muted)}
 .art-card-more[hidden]{display:none}
-@media print{.art-card-body.is-collapsed{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}.art-card-more{display:none}}
+@media print{.art-card-body.is-collapsed{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}.art-card-more{display:none}
+  #artGrid{display:block}
+  #artGrid .art-card{break-inside:auto;margin-bottom:10pt}
+  .art-card-head,.art-group-label{break-after:avoid;page-break-after:avoid}
+  .art-card-ugt,.art-card-body p{break-inside:avoid;page-break-inside:avoid}}
 .art-card-body li{margin-bottom:3px}
 .art-card-ugt{margin-top:9px;font-size:12px;color:#5a3e00;background:var(--amber-soft);border-radius:var(--r-sm);padding:7px 10px 7px 10px;border-left:3px solid var(--amber-line)}
 .art-card-ugt::before{content:"POSICIÓN UGT";display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9a6000;margin-bottom:4px}

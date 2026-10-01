@@ -40,7 +40,8 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 
 8. ✅ (2026-10-01) Prueba permanente en `tools/check-web.js` (26 comprobaciones); fichas accesibles con teclado (Tab, Intro/espacio, el foco vuelve al cerrar); marca de caché `?v=20261001` en CSS y JS.
    - Fallo encontrado por la prueba y corregido: `.art-card-more{display:inline-flex}` anulaba `[hidden]` → 31 fichas mostraban un botón vacío desde el commit 0ca4980. Además, la medición del pliegue se repite tras cargar la fuente web.
-9. Pendiente externo: tablas de cuantías vigentes (Gerencia).
+9. ✅ (2026-10-01) Prueba ampliada a Chrome, Firefox y WebKit, móvil real (viewport), impresión, accesibilidad (axe) y `--publicada`. Corregido: enmiendas-ugt.html sin viewport ni DOCTYPE (en móvil real se veía a 980 px, en modo de compatibilidad antigua); contraste insuficiente (gris de texto, etiquetas ⚠, contador activo, "sin equivalente"); impresión en una columna (25 → 17 págs.); un "Gerencia" residual en el Art. 8.
+10. Pendiente HUMANO: tablas de cuantías vigentes (Gerencia); validar las 18 propuestas de enmienda; decidir si se borran calculators.js (no se carga), filter.js y accordion.js (buscan elementos que no existen); enmienda del Art. 18.1 redundante con el 18.2.
 
 ## Decisiones y por qué
 - **Voz impersonal**: credibilidad ante el Rectorado; nada que parezca un panfleto.
