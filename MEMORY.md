@@ -47,6 +47,9 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 ## Auditoría completa de las 39 fichas (2026-10-01) — 46 correcciones
 Errores de fondo corregidos: Art. 9 decía que no existía normativa de teletrabajo (existe: Reglamento 10/2024, de 23 de julio); Art. 20 presentaba como mejora los 18 meses tras IT (ya estaban en 2017, Art. 19.2); Art. 21 le atribuía incompatibilidades y cómputo que no regula; DA 2ª decía que admite declaración responsable (no la prevé); DA MSN citaba festivos en sábado de 2024 equivocados y un convenio no verificado; Art. 32 atribuía a la Directiva la obligación de retribuir (es el art. 37.9 ET: 4 días, personal laboral); Art. 14: la disponibilidad solo se compensa en tiempo; Art. 27 "nula de pleno derecho"; Art. 25 "estudios médicos"; Art. 22 describía mal el régimen de 2017. "Gerencia" sustituido por el órgano competente en materia de PTGAS (lo que dice el texto de 2026).
 
+## Cotejo modal (art_texts.js) con el OCR (2026-10-01)
+Comparación palabra a palabra de 40 entradas: arts. 1-32 y DA/DT coinciden (las diferencias son solo erratas del OCR corregidas: espacios, "12/22/32" → 1.º/2.º/3.º, "300" → "30 o"). Corregido: el Art. 5.2.c omitía una frase; "civi_preambulo" y "da_festivos_sabado" contenían redacción propia con afirmaciones no verificadas bajo la etiqueta "texto literal" → ahora cita literal del Preámbulo y nota neutra. Caché `art_texts.js?v=3`.
+
 ## Aprendizajes y errores a evitar
 - Leer el artículo completo, no solo el titular (Art. 24.2 se omitió al principio).
 - Los hallazgos de "ausencia" deben confirmarse con grep literal en el OCR.
