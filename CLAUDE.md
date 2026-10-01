@@ -24,6 +24,19 @@ Herramienta de análisis comparativo: propuesta de Instrucción Interna 2026 del
 - Al modificar `main.css` o cualquier `.js`, actualizar la marca `?v=AAAAMMDD` de sus referencias en `index.html`.
 - Git: `git add -p`, commit descriptivo en español, push a `main`.
 
+## Kilo
+
+Kilo no carga `.claude/`: carga agentes de `.kilo/agents/`, comandos de `.kilo/command/` e instrucciones de `AGENTS.md` (puntero a este archivo). `.claude/` queda como copia para Claude Code; la fuente de verdad para Kilo es `.kilo/`.
+
+- **Agentes** (subagentes, `.kilo/agents/`):
+  - `desarrollador-web` — implementa cambios en la web (HTML/CSS/JS), ejecuta `npm run check` y actualiza `MEMORY.md`.
+  - `verificador-fuentes` — auditoría de contenido solo lectura: contrasta fichas y modales contra las fuentes primarias.
+  - `qa-web` — ejecuta e interpreta `tools/check-web.js` (26 comprobaciones) sin modificar la web.
+  - `publicador` — commit descriptivo en español, push a `main` y verificación de GitHub Pages con `--publicada`.
+  - `evaluador-enmiendas` — evalúa una enmienda contra las fuentes (solo lectura).
+  - `orquestador-enmiendas` — coordina la evaluación delegando en `evaluador-enmiendas` y escribe `revision/evaluacion-enmiendas.md`.
+- **Comandos** (`.kilo/command/`): `/auditar-articulo`, `/nuevo-recorte`, `/verificar-alucinaciones` (delega en `verificador-fuentes`), `/evaluar-enmiendas` (delega en `orquestador-enmiendas`), `/qa-web` (delega en `qa-web`) y `/publicar` (delega en `publicador`).
+
 ## Convenciones
 
 - **Voz impersonal siempre**: "Se solicitará", "Se pedirá", "El texto establece que...". Nunca "UGT pide/exige/denuncia".

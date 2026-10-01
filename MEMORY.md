@@ -5,6 +5,7 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 - Web estática en GitHub Pages, 39 fichas (14 alerta / 8 mejora / 10 neutro / 7 nuevo). Repo `OcBSmith/Instrucci-n-interna-propuesta-rectorado`, rama `main`.
 - Contadores dinámicos leen `data-status` del DOM. Nota de versión/fecha en cabecera.
 - `normativa/`: 10 normas oficiales (PDF + `.txt` para grep). Ver CLAUDE.md.
+- Sistema de agentes Kilo creado (2026-10-01): 6 subagentes en `.kilo/agents/` (desarrollador-web, verificador-fuentes, qa-web, publicador, evaluador-enmiendas, orquestador-enmiendas) y 6 comandos en `.kilo/command/` (auditar-articulo, nuevo-recorte, verificar-alucinaciones, evaluar-enmiendas, qa-web, publicar). `AGENTS.md` es puntero a `CLAUDE.md` (nueva sección «Kilo»). `.claude/` queda como copia para Claude Code; para Kilo la fuente de verdad es `.kilo/`.
 
 ## Recortes documentados en la web (verificados 2026-10-01)
 | Art. 2026 | Art. 2017 | Recorte |
