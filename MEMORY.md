@@ -33,7 +33,7 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
    - 14.1: el acuerdo de homologación (apdo. 7º) no fija franja horaria y compensa a 1h45 → las 22:00 son decisión de la UMA; el 2x de la UMA es una mejora.
 2. **Cuantías por IPC sin verificar**: pedir a Gerencia las tablas vigentes (DA 3ª 2017). Las subidas no son uniformes: +10% / +18,46% / 0%.
 3. **Comprobar vigencia del IV Convenio** (copia UPO de 2004): buscar modificaciones posteriores en el BOJA.
-4. ✅ Web probada (2026-10-01) con playwright-core + Chrome local desde un script en scratchpad (no hace falta MCP): 0 errores de consola, contadores 14/8/7/10, sin desbordamiento a 375 px. Corregido el CSS móvil que cortaba 18 etiquetas con "…". Pendiente: los párrafos de las fichas no tienen separación (reset `*{margin:0}`) y las fichas largas (Art. 28: 1.700 px) son densas; valorar separar los `<p>` o plegar los detalles.
+4. ✅ Web probada (2026-10-01) con playwright-core + Chrome local desde un script en scratchpad (no hace falta MCP): 0 errores de consola, contadores 14/8/7/10, sin desbordamiento a 375 px. Corregido el CSS móvil que cortaba 18 etiquetas con "…". Separación de 8 px entre bloques de `.art-card-body` añadida. Pendiente opcional: plegar los detalles de las fichas muy largas (Art. 28: ~1.770 px en escritorio).
 5. **NotebookLM MCP**: falta `setup_auth` vía CLI.
 6. `enmiendas-ugt.html` muestra "🔴 Línea roja" como chip y etiqueta visibles (Arts. 10 y 13.5, líneas ~421-472): decidir si se mantiene, porque choca con la regla de tono no belicoso.
 7. Crear `specs/` si el proyecto se amplía (metodología SDD).
