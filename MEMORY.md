@@ -25,7 +25,7 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 | DT | DT 2017 | CIVI desaparece del articulado |
 
 ## Deuda técnica (pendiente)
-1. **Volcar a la web la verificación normativa** (fichas Arts. 14, 17, 28, 29 y Navidad):
+1. ✅ HECHO (2026-10-01): verificación normativa volcada a las fichas Arts. 14, 17, 28 y 29. Detalle de lo volcado:
    - 29.4: las 4 semanas adicionales salen del Decreto 347/2003 (solo Junta). Ley 5/2023 (art. 3.1.c: al PTGAS solo de forma supletoria; art. 38) y EBEP art. 49 no las prevén → 2017 = 20 semanas, 2026 = 19.
    - 28.11: "vacaciones obligatorias" = bloque de agosto del calendario (2026: 3–21 ago) → asuntos propios solo acumulables a ese bloque.
    - 17.2: "festivo" en las tarifas b y c (confirmado en el PDF original, p. 11). En 2017 un festivo cobraba siempre la tarifa alta.
