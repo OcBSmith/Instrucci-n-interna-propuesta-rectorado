@@ -460,8 +460,8 @@ dialog.consult-dialog::backdrop{background:rgba(0,0,0,.45)}
 
 /* ── DOC HERO ── */
 .doc-hero{background:#ffffff;color:var(--text);border:1px solid var(--border);border-radius:var(--r-lg);padding:0;margin-top:24px;margin-bottom:28px;display:flex;align-items:stretch;justify-content:space-between;gap:0;flex-wrap:wrap;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05);position:relative}
-.doc-hero-logo-col{flex-shrink:0;width:240px;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:32px 24px;border-right:1px solid var(--border);position:relative;overflow:hidden}
-.doc-hero-logo-img{height:54px;width:auto;display:block;z-index:2;position:relative}
+.doc-hero-logo-col{flex-shrink:0;width:270px;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:32px 30px;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.doc-hero-logo-img{height:48px;max-width:100%;width:auto;display:block;z-index:2;position:relative;object-fit:contain}
 .doc-hero-logo-graphic{position:absolute;bottom:0;left:0;width:160px;height:160px;pointer-events:none;overflow:visible;z-index:1}
 .doc-hero-logo-graphic svg{width:100%;height:100%;display:block}
 .doc-hero-inner{flex:1 1 480px;padding:26px 26px 24px 28px;min-width:0}
