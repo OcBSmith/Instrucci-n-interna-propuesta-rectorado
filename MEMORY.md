@@ -6,6 +6,7 @@ Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo q
 - Contadores dinámicos leen `data-status` del DOM. Nota de versión/fecha en cabecera.
 - `normativa/`: 10 normas oficiales (PDF + `.txt` para grep). Ver CLAUDE.md.
 - Sistema de agentes Kilo creado (2026-10-01): 6 subagentes en `.kilo/agents/` (desarrollador-web, verificador-fuentes, qa-web, publicador, evaluador-enmiendas, orquestador-enmiendas) y 6 comandos en `.kilo/command/` (auditar-articulo, nuevo-recorte, verificar-alucinaciones, evaluar-enmiendas, qa-web, publicar). `AGENTS.md` es puntero a `CLAUDE.md` (nueva sección «Kilo»). `.claude/` queda como copia para Claude Code; para Kilo la fuente de verdad es `.kilo/`.
+- (2026-10-05) Rediseño visual del bloque `.doc-hero`: deco triangular rojo en logo col, icono en tag, iconos de contexto en meta, badge pill para estado, enlace a enmiendas en «por», botón PDF rojo oscuro. Caché `main.css?v=20261005`. 26/26 checks OK.
 
 ## Recortes documentados en la web (verificados 2026-10-01)
 | Art. 2026 | Art. 2017 | Recorte |
