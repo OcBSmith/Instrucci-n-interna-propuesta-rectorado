@@ -255,7 +255,7 @@
           <p>Primera regulación formal del teletrabajo en la Instrucción. El personal en teletrabajo tiene <strong>idénticos derechos y obligaciones</strong> que el presencial: mismo régimen de jornada, presencia obligatoria, permisos y control horario. Durante las horas de presencia obligatoria debe estar disponible por medios electrónicos.</p>
           <p><strong>Remisión a la normativa propia:</strong> el artículo se aplica <em>"sin perjuicio de las especialidades establecidas en la normativa reguladora del teletrabajo en la Universidad de Málaga"</em>. Esa normativa existe: el <strong>Reglamento 10/2024, de 23 de julio</strong>, por el que se regula el teletrabajo para el PTGAS de la UMA, aprobado por el Consejo de Gobierno tras negociación con la representación del personal. El acceso al teletrabajo y sus condiciones se rigen por ese Reglamento; el Art. 9 solo fija que la jornada, la flexibilidad, la presencia obligatoria, los permisos y el control horario son los mismos que en el trabajo presencial.</p>
         </div>
-        <div class="art-card-ugt">Se comprobará que el Art. 9 sea coherente con el Reglamento 10/2024 de teletrabajo del PTGAS y que no introduzca por la vía de la Instrucción condiciones más restrictivas que las ya negociadas en ese Reglamento.</div>
+        <div class="art-card-ugt art-card-ugt-ok">✓ Sin objeciones, ya que el artículo se remite al Reglamento 10/2024 de teletrabajo que ya fue negociado y aprobado.</div>
       </div>
 
       <div class="art-card red" data-status="alerta">
@@ -271,7 +271,7 @@
           <p><strong>Práctica reciente (verificada).</strong> Por Resolución del Rector se ha aplicado un periodo más amplio que el de la Instrucción: del <strong>16 de junio al 15 de septiembre de 2024</strong> (Resolución de 27 de mayo de 2024, que lo califica de "recuperar la reducción de jornada") y del <strong>16 de junio al 8 de septiembre de 2025</strong> (Resolución de 6 de junio de 2025), mediante una bolsa de horas. Con la propuesta, solo julio y agosto quedarían garantizados en el articulado.</p>
           <p>Además, el Art. 10.5 prohíbe acumular la reducción de verano con la reducción por edad, lo que afecta específicamente a trabajadores mayores de 60 años.</p>
         </div>
-        <div class="art-card-ugt">Se solicitará fijar en el articulado el horario reducido del 16 de junio al 15 de septiembre, periodo aplicado por Resolución del Rector de 27 de mayo de 2024, que cualquier reducción de ese periodo sea motivada y comunicada a la Mesa Sectorial, y eliminar la incompatibilidad con la reducción de jornada por edad.</div>
+        <div class="art-card-ugt">Se solicitará fijar en el articulado el horario reducido del 16 de junio al 15 de septiembre, periodo aplicado por Resolución del Rector de 27 de mayo de 2024, que cualquier reducción de ese periodo sea motivada y comunicada a la parte social, y eliminar la incompatibilidad con la reducción de jornada por edad.</div>
       </div>
 
       <div class="art-card neutral" data-status="neutro">
@@ -819,46 +819,53 @@ function filtrarArts(cat, btn) {
   var modalTitle = document.getElementById('artModalTitle');
   var modalBody  = document.getElementById('artModalBody');
 
-  function getArtKey(card) {
+  function getArtKeys(card) {
     var ref = (card.querySelector('.art-card-ref') || {}).textContent || '';
-    var m = ref.match(/→\s*Arts?\.\s*(\d+)/);
-    if (m) return 'art' + m[1];
-    var da = ref.match(/→\s*DA\s+(Primera|Segunda|Tercera|Cuarta)/i);
-    if (da) return 'da_' + da[1].toLowerCase();
-    if (/DT\s+Nueva/i.test(ref)) return 'dt_nueva';
-    if (/Derogatoria/i.test(ref)) return 'derogatoria';
-    if (/Solo\s+Pre[aá]mbulo/i.test(ref)) return 'civi_preambulo';
-    if (/Suprimida/i.test(ref)) return 'da_festivos_sabado';
-    return null;
+    var target = ref.split('→')[1] || ref;
+    var nums = target.match(/\b\d+\b/g);
+    if (nums && nums.length > 0 && /Arts?/i.test(target)) {
+      return nums.map(function(n) { return 'art' + n; });
+    }
+    var da = target.match(/DA\s+(Primera|Segunda|Tercera|Cuarta)/i);
+    if (da) return ['da_' + da[1].toLowerCase()];
+    if (/DT\s+Nueva/i.test(target)) return ['dt_nueva'];
+    if (/Derogatoria/i.test(target)) return ['derogatoria'];
+    if (/Solo\s+Pre[aá]mbulo/i.test(ref)) return ['civi_preambulo'];
+    if (/Suprimida/i.test(ref)) return ['da_festivos_sabado'];
+    return [];
   }
 
   // Convierte texto OCR crudo en HTML con párrafos limpios
   function formatOcrText(raw) {
-    // 1. Normalizar: colapsar 3+ saltos a 2
-    var text = raw.replace(/\n{3,}/g, '\n\n');
-    // 2. Dividir en bloques por línea en blanco
-    var blocks = text.split(/\n\n+/);
-    var html = blocks.map(function(block) {
-      block = block.trim();
-      if (!block) return '';
-      // Dentro de cada bloque, unir las líneas que son continuación
-      // (las líneas de ítem numerado/letra empiezan con dígito+punto, letra+), guion)
-      var lines = block.split('\n');
-      var out = '';
-      for (var i = 0; i < lines.length; i++) {
-        var line = lines[i].trim();
-        if (!line) continue;
-        var isItemStart = /^(\d+[\.\)]\s|[a-z][\.\)]\s|[-•]\s)/i.test(line);
-        if (out === '' || isItemStart) {
-          out += (out ? '<br>' : '') + line;
-        } else {
-          // continuación de línea: unir con espacio
-          out += ' ' + line;
+    var rawLines = raw.split('\n');
+    var html = '';
+    var currentP = '';
+    
+    for (var i = 0; i < rawLines.length; i++) {
+      var line = rawLines[i].trim();
+      if (!line) {
+        if (currentP) {
+          html += '<p>' + currentP + '</p>';
+          currentP = '';
         }
+        continue;
       }
-      return '<p>' + out + '</p>';
-    });
-    return html.join('');
+      
+      var isItemStart = /^(\d+[\.\)]\s|[a-z][\.\)]\s|[-•]\s|Artículo\s|Disposición\s)/i.test(line);
+      
+      if (currentP === '') {
+        currentP = line;
+      } else if (isItemStart) {
+        html += '<p>' + currentP + '</p>';
+        currentP = line;
+      } else {
+        currentP += ' ' + line;
+      }
+    }
+    if (currentP) {
+      html += '<p>' + currentP + '</p>';
+    }
+    return html;
   }
 
   var ultimaFicha = null;
@@ -874,11 +881,17 @@ function filtrarArts(cat, btn) {
     });
     card.addEventListener('click', function() {
       ultimaFicha = card;
-      var key = getArtKey(card);
+      var keys = getArtKeys(card);
       modalRef.textContent   = (card.querySelector('.art-card-ref')   || {}).textContent || '';
       modalTitle.textContent = (card.querySelector('.art-card-title') || {}).textContent || '';
-      if (key && typeof artTexts !== 'undefined' && artTexts[key]) {
-        modalBody.innerHTML = formatOcrText(artTexts[key]);
+      var foundTexts = [];
+      if (typeof artTexts !== 'undefined' && keys.length > 0) {
+        keys.forEach(function(k) {
+          if (artTexts[k]) foundTexts.push(artTexts[k]);
+        });
+      }
+      if (foundTexts.length > 0) {
+        modalBody.innerHTML = foundTexts.map(function(t) { return formatOcrText(t); }).join('<hr style="margin:24px 0;border:none;border-top:1px dashed #cbd5e1">');
       } else {
         modalBody.innerHTML = '<p style="color:#888">⚠ Este artículo no aparece en el articulado de la propuesta del Rectorado (es una disposición suprimida o que solo figura en el Preámbulo).</p>';
       }
