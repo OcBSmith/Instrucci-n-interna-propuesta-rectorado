@@ -87,6 +87,38 @@ body {
 
 .page { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
 
+/* ── Top Nav ── */
+.top-nav {
+  padding: 24px 0 0;
+}
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--uma-blue);
+  text-decoration: none;
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all .15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.nav-back:hover {
+  background: var(--uma-blue-lt);
+  border-color: var(--uma-blue);
+  color: var(--navy);
+  transform: translateX(-2px);
+}
+.nav-back-arrow {
+  font-size: 14px;
+  line-height: 1;
+}
+
 /* ── Header ── */
 .header {
   padding: 44px 0 32px;
@@ -321,6 +353,7 @@ body {
   .ugt-inner { padding: 10px 10px 12px 10px; }
 }
 @media print {
+  .top-nav { display: none; }
   body { background: #fff; color: #000; }
   .ugt-body { color: #900 !important; }
   .articulado tbody tr.art-row:hover td { background: transparent; }
@@ -330,6 +363,12 @@ body {
 <body>
 
 <main class="page">
+
+<nav class="top-nav" aria-label="Navegación principal">
+  <a href="index.html" class="nav-back">
+    <span class="nav-back-arrow" aria-hidden="true">←</span> Volver al comparador interactivo
+  </a>
+</nav>
 
 <header class="header">
   <div class="ugt-pill">UGT</div>
