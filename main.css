@@ -488,12 +488,12 @@ dialog.consult-dialog::backdrop{background:rgba(0,0,0,.45)}
 .doc-hero-update-svg{width:18px;height:20px;color:var(--text-3);flex-shrink:0;margin-top:1px}
 .doc-hero-update-text{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;color:#334155}
 .doc-hero-update-text strong{color:#0F172A;font-weight:700}
-.doc-hero .print-btn{flex-shrink:0;align-self:flex-start;white-space:nowrap;margin:26px 26px 0 0;background:var(--brand);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(227,6,19,.25);cursor:pointer;transition:background .15s,transform .12s,box-shadow .15s}
-.doc-hero .print-btn:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(227,6,19,.35)}
-.doc-hero .print-btn:active{transform:translateY(0)}
-.doc-hero .print-btn-svg{width:16px;height:16px;stroke-width:2.2;flex-shrink:0}
+.doc-hero .print-btn{flex-shrink:0;align-self:flex-start;white-space:nowrap;margin:26px 26px 0 0;background:var(--navy);color:#ffffff;border:1.5px solid var(--navy);border-radius:8px;padding:10px 18px;font-size:13.5px;font-weight:700;letter-spacing:.01em;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(27,48,85,.18);cursor:pointer;transition:background .15s,transform .12s,box-shadow .15s}
+.doc-hero .print-btn:hover{background:var(--navy-mid);border-color:var(--navy-mid);color:#ffffff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(27,48,85,.26)}
+.doc-hero .print-btn:active{transform:translateY(0);box-shadow:0 1px 4px rgba(27,48,85,.15)}
+.doc-hero .print-btn-svg{width:16px;height:16px;stroke-width:2.2;flex-shrink:0;color:#ffffff}
 @media(max-width:768px){.doc-hero{flex-direction:column}.doc-hero-logo-col{width:100%;border-right:none;border-bottom:1px solid var(--border);padding:24px 20px;justify-content:center}.doc-hero-logo-img{height:46px}.doc-hero-logo-graphic{width:130px;height:130px}.doc-hero-inner{padding:20px 18px}.doc-hero .print-btn{margin:0 18px 18px;width:calc(100% - 36px);justify-content:center}.doc-hero-title{font-size:18px}}
-@media print{.doc-hero{background:#fff!important;color:#000!important;border:1px solid #ccc!important}.doc-hero-title{color:#000!important}.doc-hero-status-badge{border:1px solid #ddd!important}.doc-hero-update{background:#f5f5f5!important;border:1px solid #ccc!important}}
+
 /* ── TOPBAR COMPACTA ── */
 .page-topbar{background:var(--bg-card);border-bottom:3px solid var(--brand);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px;border-radius:var(--r-lg);box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .page-topbar-brand{display:flex;align-items:center;gap:14px}
@@ -541,11 +541,7 @@ dialog.consult-dialog::backdrop{background:rgba(0,0,0,.45)}
 .art-card-more{display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:4px 10px;font:inherit;font-size:12px;font-weight:700;color:var(--brand);background:none;border:1px solid var(--border);border-radius:20px;cursor:pointer}
 .art-card-more:hover,.art-card-more:focus-visible{background:var(--bg-muted)}
 .art-card-more[hidden]{display:none}
-@media print{.art-card-body.is-collapsed{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}.art-card-more{display:none}
-  #artGrid{display:block}
-  #artGrid .art-card{break-inside:auto;margin-bottom:10pt}
-  .art-card-head,.art-group-label{break-after:avoid;page-break-after:avoid}
-  .art-card-ugt,.art-card-body p{break-inside:avoid;page-break-inside:avoid}}
+
 .art-card-body li{margin-bottom:3px}
 .art-card-ugt{margin-top:9px;font-size:12px;color:#5a3e00;background:var(--amber-soft);border-radius:var(--r-sm);padding:7px 10px 7px 10px;border-left:3px solid var(--amber-line)}
 .art-card-ugt::before{content:"POSICIÓN UGT";display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9a6000;margin-bottom:4px}
@@ -774,61 +770,155 @@ dialog.art-modal[open]{
   .art-card:active{transform:scale(.985);transition:transform .1s}
 }
 
-/* ══ BOTÓN IMPRIMIR / PDF ══ */
+/* ══ BOTÓN IMPRIMIR / PDF (ESTILO BASE Y FOOTER) ══ */
 .print-btn{
   display:inline-flex;align-items:center;gap:6px;
-  padding:9px 18px;border-radius:8px;border:none;cursor:pointer;
-  font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em;
-  background:var(--navy);color:#fff;
-  transition:opacity .15s,transform .1s;
+  padding:8px 16px;border-radius:6px;border:1px solid var(--navy);cursor:pointer;
+  font-family:'Source Sans 3',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.01em;
+  background:var(--navy);color:#ffffff;
+  transition:all .15s ease;
   text-decoration:none
 }
-.print-btn:hover{opacity:.85;transform:translateY(-1px)}
-.print-btn:active{opacity:1;transform:none}
-.print-btn-top{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px)}
-.print-btn-top:hover{background:rgba(255,255,255,.25);opacity:1}
+.print-btn:hover{background:var(--navy-mid);border-color:var(--navy-mid);color:#ffffff;transform:translateY(-1px);box-shadow:0 3px 8px rgba(27,48,85,.18)}
+.print-btn:active{transform:translateY(0);box-shadow:none}
 
-/* ══ ESTILOS DE IMPRESIÓN / PDF ══ */
+/* ══ ESTILOS DE IMPRESIÓN / PDF DEFINITIVOS (LOOK EDITORIAL LIMPIO) ══ */
 @media print{
-  /* Ocultar elementos de navegación e interactivos */
-  .sticky-nav,.filter-chips-row,.print-btn,.btn-top,
-  .art-modal,dialog,.art-modal-close,
-  .doc-hero-status,
-  .acord-head .acord-arrow{display:none!important}
+  /* Configuración de página A4 con márgenes óptimos */
+  @page{margin:12mm 10mm;size:A4}
 
-  /* Fondo blanco, sin sombras */
-  *{background:transparent!important;box-shadow:none!important;animation:none!important}
-  body{background:#fff!important;color:#000!important}
-  .page{padding:0!important;max-width:100%!important}
+  /* Reset tipográfico y base en papel */
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;box-shadow:none!important;animation:none!important}
+  body{font-size:9.5pt;line-height:1.45;background:#ffffff!important;color:#0F172A!important;font-family:'Source Sans 3',Arial,Helvetica,sans-serif}
+  .page{max-width:100%!important;padding:0!important;margin:0!important}
 
-  /* Cabecera */
-  .doc-hero{background:var(--navy)!important;color:#fff!important;padding:24px 28px!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .doc-hero-title{font-size:18px!important}
-  .doc-hero-by{font-size:13px!important}
+  /* Ocultar elementos interactivos y de navegación web */
+  .intro-box,.sticky-nav,.btn-top,.focus-toggle-btn,.print-btn,.copy-quote-btn,
+  .filter-chips-row,.filter-search-box,.calc-section,.reading-progress-bar,
+  .art-modal,.art-modal-overlay,dialog,.consult-dialog,.art-card-more,
+  .doc-hero-logo-graphic,.doc-hero .print-btn,
+  .doc-footer button,.doc-footer a,.footer-badge{display:none!important}
 
-  /* Secciones: sin salto dentro de una tarjeta */
-  .art-card{break-inside:avoid;border:1px solid #ddd!important;margin-bottom:8px!important}
-  .art-group-label{break-before:avoid;font-weight:700}
-  .section{break-before:page}
-  .section:first-of-type{break-before:auto}
+  /* Cabecera institucional limpia (fondo blanco, tinta económica, excelente legibilidad) */
+  .doc-hero{
+    background:#ffffff!important;color:#0F172A!important;
+    border:1.5pt solid #CBD5E1!important;border-radius:8pt!important;
+    padding:14pt 16pt!important;margin:0 0 14pt 0!important;
+    display:flex!important;flex-direction:row!important;align-items:flex-start!important;
+    break-inside:avoid;page-break-inside:avoid
+  }
+  .doc-hero-logo-col{
+    width:auto!important;background:#ffffff!important;
+    padding:0 16pt 0 0!important;border-right:1pt solid #E2E8F0!important;
+    border-bottom:none!important;display:flex!important;align-items:center!important;
+    justify-content:center!important;flex-shrink:0!important
+  }
+  .doc-hero-logo-img{
+    height:40pt!important;max-width:130pt!important;width:auto!important;
+    display:block!important;object-fit:contain!important
+  }
+  .doc-hero-inner{padding:0 0 0 16pt!important;flex:1 1 auto!important}
+  .doc-hero-tag{
+    background:#F1F5F9!important;border:1pt solid #CBD5E1!important;
+    color:#1B3055!important;font-size:8pt!important;padding:2pt 7pt!important;
+    border-radius:4pt!important;display:inline-flex!important;margin-bottom:5pt!important;
+    font-family:'IBM Plex Mono',monospace!important;font-weight:700!important
+  }
+  .doc-hero-tag-svg{display:none!important}
+  .doc-hero-title{
+    font-size:14pt!important;font-weight:800!important;color:#1B3055!important;
+    line-height:1.25!important;margin:0 0 5pt 0!important
+  }
+  .doc-hero-meta{
+    font-size:8.5pt!important;color:#475569!important;margin-bottom:6pt!important;
+    display:flex!important;gap:4pt 8pt!important;align-items:center!important
+  }
+  .doc-hero-status-badge{
+    background:#FEF3C7!important;border:1pt solid #FCD34D!important;
+    color:#92400E!important;font-size:8pt!important;font-weight:600!important;
+    padding:2pt 7pt!important;border-radius:4pt!important;margin-bottom:6pt!important
+  }
+  .doc-hero-divider{height:1pt!important;background:#E2E8F0!important;margin:0 0 6pt 0!important}
+  .doc-hero-by{font-size:9pt!important;color:#1E293B!important;margin-bottom:6pt!important}
+  .doc-hero-by-link{color:#B3040F!important;font-weight:700!important;text-decoration:none!important}
+  .doc-hero-update{
+    background:#F8FAFC!important;border:1pt solid #E2E8F0!important;
+    border-radius:5pt!important;padding:5pt 8pt!important;
+    font-size:7.5pt!important;line-height:1.4!important;color:#334155!important
+  }
+  .doc-hero-update-svg{display:none!important}
+  .doc-hero-update-text strong{color:#0F172A!important;font-weight:700!important}
 
-  /* Acordeones FAQ: mostrar siempre el contenido */
-  .acord-body{display:block!important;height:auto!important;overflow:visible!important}
-  [hidden].acord-body{display:block!important}
+  /* Sección de Artículos */
+  .section{margin-top:12pt!important}
+  .section-header{
+    border-bottom:1.5pt solid #CBD5E1!important;padding-bottom:5pt!important;
+    margin-bottom:10pt!important;break-after:avoid;page-break-after:avoid
+  }
+  .section-icon{display:none!important}
+  .section-title{font-size:13pt!important;font-weight:700!important;color:#1B3055!important}
+  .section-sub{font-size:9pt!important;color:#475569!important;margin-top:2pt!important}
+  .section-count{font-size:8.5pt!important;background:#F1F5F9!important;color:#475569!important;border:1pt solid #CBD5E1!important}
+  .art-group-label{
+    break-after:avoid;page-break-after:avoid;font-size:10.5pt!important;
+    font-weight:700!important;color:#1B3055!important;margin:12pt 0 6pt 0!important;
+    padding-bottom:3pt!important;border-bottom:1pt solid #E2E8F0!important
+  }
 
-  /* Cards: color de borde lateral según tipo, pero solo con tinta mínima */
-  .art-card.red  {border-left:4px solid #e53935!important}
-  .art-card.green{border-left:4px solid #388e3c!important}
-  .art-card.blue {border-left:4px solid #1565c0!important}
-  .art-card.neutral{border-left:4px solid #9e9e9e!important}
+  /* Fichas artículo a artículo */
+  #artGrid{display:block!important}
+  .art-card{
+    break-inside:avoid;page-break-inside:avoid;
+    background:#ffffff!important;border:1pt solid #CBD5E1!important;
+    border-radius:6pt!important;padding:9pt 11pt!important;margin-bottom:8pt!important
+  }
+  .art-card.red{border-left:4pt solid #C01228!important}
+  .art-card.green{border-left:4pt solid #1A6B45!important}
+  .art-card.blue{border-left:4pt solid #1B3055!important}
+  .art-card.neutral{border-left:4pt solid #94A3B8!important}
 
-  /* Bloque UGT */
-  .art-card-ugt{border-left:3px solid #e6a817!important;background:#fffbef!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .art-card-ugt.art-card-ugt-ok{border-left-color:#5aaa7a!important;background:#edf7f2!important}
+  .art-card-head{
+    display:flex!important;align-items:center!important;gap:5pt!important;
+    margin-bottom:5pt!important;break-after:avoid;page-break-after:avoid
+  }
+  .art-card-ref{
+    font-size:8pt!important;background:#EEF2F8!important;color:#1B3055!important;
+    border:1pt solid #C5D0E8!important;padding:2pt 5pt!important;border-radius:3pt!important;
+    font-family:'IBM Plex Mono',monospace!important;font-weight:600!important
+  }
+  .art-card-title{font-size:10pt!important;font-weight:700!important;color:#0F172A!important}
+  .pill{
+    font-size:7.5pt!important;padding:2pt 5pt!important;border-radius:10pt!important;
+    border:1pt solid #CBD5E1!important;background:#F8FAFC!important;color:#475569!important
+  }
+  .pill.pill-warn{border-color:#FCA5A5!important;background:#FEF2F2!important;color:#991B1B!important}
+  .pill.pill-ok{border-color:#86EFAC!important;background:#F0FDF4!important;color:#166534!important}
 
-  /* Footer */
-  .doc-footer{font-size:11px;padding:14px 24px}
+  .art-card-body{
+    font-size:8.5pt!important;line-height:1.4!important;color:#1E293B!important;
+    margin-bottom:5pt!important
+  }
+  .art-card-body.is-collapsed{
+    max-height:none!important;overflow:visible!important;
+    -webkit-mask-image:none!important;mask-image:none!important
+  }
 
-  /* Fuente de página */
-  @page{margin:15mm 12mm;size:A4}
+  .art-card-ugt{
+    font-size:8pt!important;line-height:1.35!important;
+    background:#FFFBEB!important;border:1pt solid #FDE68A!important;
+    border-left:3pt solid #D97706!important;padding:5pt 7pt!important;
+    border-radius:4pt!important;color:#78350F!important;
+    break-inside:avoid;page-break-inside:avoid
+  }
+  .art-card-ugt.art-card-ugt-ok{
+    background:#F0FDF4!important;border-color:#BBF7D0!important;
+    border-left-color:#16A34A!important;color:#14532D!important
+  }
+
+  /* Pie del documento */
+  .doc-footer{
+    font-size:7.5pt!important;padding:8pt 0!important;border-top:1pt solid #CBD5E1!important;
+    color:#64748B!important;text-align:center!important;margin-top:12pt!important;
+    break-before:avoid;page-break-before:avoid
+  }
 }
