@@ -651,7 +651,7 @@ dialog.art-modal[open]{
 .art-modal-body::-webkit-scrollbar{width:5px}
 .art-modal-body::-webkit-scrollbar-track{background:transparent}
 .art-modal-body::-webkit-scrollbar-thumb{background:#cdd4e8;border-radius:99px}
-.art-modal-body p{margin:0 0 12px;color:#2c3a55}
+.art-modal-body p{margin:0 0 12px;color:#2c3a55;text-align:justify;text-justify:inter-word;hyphens:auto}
 .art-modal-body p:last-child{margin-bottom:0}
 /* Primera línea (nombre del artículo) destacada */
 
