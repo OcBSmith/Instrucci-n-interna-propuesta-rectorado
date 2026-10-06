@@ -17,3 +17,9 @@ tools/out/
 
 # Informes internos de negociación (NO publicar: el repositorio es público)
 revision/
+
+# Cursos y archivos pesados multimedia
+Curso mouredev/
+*.m4a
+*.mp3
+*.mp4
