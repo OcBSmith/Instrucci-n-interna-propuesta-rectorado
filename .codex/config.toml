@@ -1,0 +1,6 @@
+[mcp_servers.notebooklm]
+command = "npx"
+args = ["notebooklm-mcp@latest"]
+
+[mcp_servers.playwright]
+url = "http://localhost:8931"
