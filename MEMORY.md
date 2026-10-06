@@ -2,7 +2,9 @@
 Estado del proyecto entre sesiones. Máximo ~60 líneas. Resumir o eliminar lo que ya no aporte.
 
 ## Estado actual
-- Web estática en GitHub Pages, 39 fichas (14 alerta / 8 mejora / 10 neutro / 7 nuevo). Repo `OcBSmith/Instrucci-n-interna-propuesta-rectorado`, rama `main`.
+- (2026-10-06) Publicación en producción con Cloudflare Workers (URL: https://instrucci-n-interna-propuesta-rectorado.ugtsp.workers.dev). Testeo completo de compatibilidad móvil (320px a 412px con 0px overflow en index.html y enmiendas-ugt.html, visor modal táctil y 26/26 checks OK). Exclusión de audios pesados (68 MB) de Git. Terminología alineada a «Instrucción interna vigente (2017)» en todo el proyecto.
+- Despliegue en producción (Cloudflare): https://instrucci-n-interna-propuesta-rectorado.ugtsp.workers.dev. Subdominio institucional ugtsp en Cloudflare Workers.
+- Repositorio Git: OcBSmith/Instrucci-n-interna-propuesta-rectorado, rama main. 39 fichas (14 alerta / 8 mejora / 10 neutro / 7 nuevo).
 - Contadores dinámicos leen `data-status` del DOM. Nota de versión/fecha en cabecera.
 - `normativa/`: 10 normas oficiales (PDF + `.txt` para grep). Ver CLAUDE.md.
 - Sistema de agentes Kilo creado (2026-10-01): 6 subagentes en `.kilo/agents/` (desarrollador-web, verificador-fuentes, qa-web, publicador, evaluador-enmiendas, orquestador-enmiendas) y 6 comandos en `.kilo/command/` (auditar-articulo, nuevo-recorte, verificar-alucinaciones, evaluar-enmiendas, qa-web, publicar). `AGENTS.md` es puntero a `CLAUDE.md` (nueva sección «Kilo»). `.claude/` queda como copia para Claude Code; para Kilo la fuente de verdad es `.kilo/`.
